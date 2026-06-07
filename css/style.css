@@ -88,7 +88,36 @@ nav ul li:hover{
 /* ==========================================
    HERO SECTION
 ========================================== */
+.hero::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
 
+    background:
+    rgba(255,255,255,.05);
+
+    border-radius:50%;
+
+    top:-200px;
+    right:-100px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border-radius:50%;
+
+    bottom:200px;
+    left:-100px;
+}
 .hero{
     display:flex;
     justify-content:center;
@@ -104,8 +133,9 @@ nav ul li:hover{
     #1e293b,
     #2563eb
     );
-
+    background-size:400% 300%;
     color:white;
+    
 }
 
 .hero-text{
@@ -128,6 +158,49 @@ nav ul li:hover{
     margin-top:20px;
 }
 
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.info-row:last-child{
+    border-bottom:none;
+}
+
+.info-row span:first-child{
+    font-weight:600;
+    color:#64748b;
+}
+.card p{
+    line-height:2.4;
+    color:#1d1e1f;
+}
+/* ==========================================
+   TECH STACK
+========================================== */
+
+.tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.tech-stack span{
+    background:#2563eb;
+    color:white;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.tech-stack span:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
 /* ==========================================
    STATISTIK
 ========================================== */
@@ -191,12 +264,13 @@ nav ul li:hover{
     width:320px;
     height:320px;
     border-radius:50%;
-    border:6px solid white;
     object-fit:cover;
+    border:6px solid white;
 
     box-shadow:
-    0 0 30px rgba(255,255,255,.2),
-    0 0 60px rgba(255,255,255,.1);
+    0 0 20px rgba(255,255,255,.2),
+    0 0 60px rgba(37,99,235,.5),
+    0 0 120px rgba(37,99,235,.3);
 }
 
 /* ==========================================
@@ -212,8 +286,18 @@ section{
     margin-bottom:40px;
     color:#0A3D62;
     font-size:35px;
+    position:relative;
 }
 
+.section-title::after{
+    content:"";
+    width:80px;
+    height:4px;
+    background:#2563eb;
+    display:block;
+    margin:10px auto;
+    border-radius:10px;
+}
 /* ==========================================
    CARD
 ========================================== */
@@ -271,6 +355,7 @@ section{
         #60a5fa
     );
 }
+
 /* ==========================================
    GALLERY
 ========================================== */
@@ -321,6 +406,55 @@ footer{
     padding:25px;
 }
 
+/* ==========================================
+   TIMELINE PENDIDIKAN
+========================================== */
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:0;
+    width:4px;
+    height:100%;
+    background:#2563eb;
+}
+
+.timeline-item{
+    background:white;
+    padding:20px;
+    margin-bottom:25px;
+    margin-left:50px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    position:relative;
+}
+
+.timeline-item::before{
+    content:"";
+    width:20.5px;
+    height:18px;
+    background:#2563eb;
+    border-radius:50%;
+    position:absolute;
+    left:-39px;
+    top:25px;
+}
+
+.timeline-item h3{
+    color:#0A3D62;
+}
+
+.timeline-item span{
+    color:#64748b;
+    font-size:14px;
+}
 /* ==========================================
    RESPONSIVE
 ========================================== */
