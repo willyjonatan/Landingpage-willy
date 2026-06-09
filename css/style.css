@@ -129,6 +129,8 @@ nav ul li:hover{
 }
 .hero{
     display:flex;
+    overflow: hidden;
+    position: relative;
     justify-content:center;
     align-items:center;
     flex-wrap:wrap;
@@ -249,7 +251,7 @@ nav ul li:hover{
 
 .hero-btn a{
     background:white;
-    color:#2563eb;
+    color:#2a3244;
     text-decoration:none;
     padding:12px 25px;
     border-radius:30px;
@@ -269,14 +271,18 @@ nav ul li:hover{
 
 .hero-image{
     flex:1;
-    text-align:center;
+    text-align:right ;
 }
 
 .hero-image img{
-    width:320px;
-    height:320px;
+    width:280px !important;
+    height:280px !important;
+
     border-radius:50%;
-    object-fit:cover;
+
+    object-fit:cover !important;
+    object-position: center 15%;
+
     border:6px solid white;
 
     box-shadow:
@@ -292,7 +298,7 @@ nav ul li:hover{
 ========================================== */
 
 section{
-    padding:70px 10%;
+    padding:50px 10%;
 }
 
 .section-title{
@@ -347,7 +353,7 @@ section{
 .project-container{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:30px;
+    gap:20px;
     align-items:stretch;
 }
 
@@ -375,6 +381,7 @@ section{
 }
 
 .project-images img{
+    border:2px solid #f1f5f9;
     width:100% !important;
     height:200px !important;
     object-fit:contain !important;
@@ -383,24 +390,35 @@ section{
 
     border-radius:15px;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 
     display:block;
 }
 .project-content{
-    flex:1;
     display:flex;
     flex-direction:column;
+    height: 100%;
 }
 
 .project-content p:first-of-type{
-    min-height:80px;
+    min-height:50px;
+}
+
+.project-content p{
+    text-align: justify;
+    margin-bottom:10px;
+    line-height:1.5;
+}
+
+.project-info{
+    margin-bottom:10px !important;
 }
 
 .project-content h3{
     color:#0A3D62;
     font-size:22px;
-    margin-bottom:12px;
+    margin-bottom:8px;
+
 }
 
 .project-content{
@@ -413,6 +431,7 @@ section{
 .project-btn{
     display:inline-block;
     width:fit-content;
+
 
     margin-top:auto;
 
