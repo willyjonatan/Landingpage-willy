@@ -1,32 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Portfolio Mahasiswa - Willy Jonatan Sibagariang</title>
-
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
 <nav>
-    <div class="logo"> Ekonomi Informasi</div>
-
+    <div class="logo">Ekonomi Informasi</div>
     <ul>
-        <li><a href="#home">Home</a></li>
-
+        <li><a href="#home" class="active">Home</a></li>
         <li class="dropdown">
-            <a href="#">Project ▼</a>
-
+            <a href="#project">Project ▾</a>
             <div class="dropdown-content">
-                <a href="#project-team">Project Team</a>
-                <a href="#project-individu">Project Individu</a>
+                <a href="#project-team">Team</a>
+                <a href="#project-individu">Individu</a>
             </div>
         </li>
-
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -34,505 +26,344 @@
 
 <!-- =====================================
      HERO SECTION
-     Profil singkat mahasiswa
 ===================================== -->
 <section class="hero" id="home">
+    <div class="hero-deco-line"></div>
 
     <div class="hero-text">
-        
-
-        <h1>Willy Jonatan Sibagariang</h1>
-
+        <h1>Willy Jonatan<br>Sibagariang</h1>
         <h2>Mahasiswa Sistem Informasi</h2>
-
-        <br>
-
         <p>
-            Selamat datang di Portfolio Mahasiswa.
-            Website ini berisi informasi mengenai profil,
-            pengalaman, kemampuan, dan proyek yang telah saya kerjakan
-            selama masa perkuliahan.
+            Selamat datang di Portfolio Mahasiswa. Website ini berisi informasi mengenai 
+            profil, pengalaman, kemampuan, dan proyek yang telah saya kerjakan selama 
+            masa perkuliahan.
         </p>
 
-        <!-- Statistik -->
-
         <div class="stats">
-
             <div class="stat-box">
                 <h2>10+</h2>
                 <span>Project</span>
             </div>
-
             <div class="stat-box">
                 <h2>5+</h2>
                 <span>Teknologi</span>
             </div>
-
             <div class="stat-box">
                 <h2>3+</h2>
                 <span>Sertifikat</span>
             </div>
-
         </div>
-
-        <!-- Tombol -->
 
         <div class="hero-btn">
-            <a href="#project-team">
-                Lihat Project
-            </a>
+            <a href="#project-team">Lihat Project</a>
         </div>
-
     </div>
 
     <div class="hero-image">
-        <img src="images/foto-willy.jpg" alt="Foto Mahasiswa">
+        <div class="hero-frame-container">
+            <img src="images/foto-willy.jpg" alt="Foto Willy Jonatan">
+        </div>
     </div>
-
 </section>
-
-<section>
-
-<h2 class="section-title">
 <!-- =====================================
      BIODATA MAHASISWA
-     Data diri dan deskripsi singkat
 ===================================== -->
-Biodata
-</h2>
+<section id="about" class="about-section">
+    <h2 class="section-title">Biodata</h2>
+    
+    <div class="bio">
+        <div class="card bio-card">
+            <h3 class="card-title-modern">Data Diri</h3>
+            <div class="bio-list">
+                <div class="info-row-modern">
+                    <span class="bio-label">Nama</span>
+                    <span class="bio-value">Willy Jonatan Sibagariang</span>
+                </div>
+                <div class="info-row-modern">
+                    <span class="bio-label">Universitas</span>
+                    <span class="bio-value">Universitas Bakrie</span>
+                </div>
+                <div class="info-row-modern">
+                    <span class="bio-label">Program Studi</span>
+                    <span class="bio-value">Sistem Informasi</span>
+                </div>
+                <div class="info-row-modern">
+                    <span class="bio-label">Email</span>
+                    <span class="bio-value email-text">1232002020@student.ac.id</span>
+                </div>
+                <div class="info-row-modern">
+                    <span class="bio-label">Semester</span>
+                    <span class="bio-value">6</span>
+                </div>
+            </div>
+        </div>
 
-<div class="bio">
-
-<div class="card">
-
-    <h3>Data Diri</h3>
-
-    <div class="info-row">
-        <span>Nama</span>
-        <span>Willy Jonatan Sibagariang</span>
+        <div class="card bio-card text-card">
+            <h3 class="card-title-modern">Tentang Saya</h3>
+            <p class="bio-description">
+                    Mahasiswa Sistem Informasi yang memiliki minat pada Data Analytics, Cloud Computing, 
+                    Mobile Development, Web Development, dan Digital Business. Berpengalaman mengembangkan 
+                    berbagai proyek akademik maupun pribadi yang berfokus pada pemanfaatan teknologi untuk 
+                    menyelesaikan permasalahan dan meningkatkan nilai bisnis. Memiliki kemampuan analitis, 
+                    problem solving, serta ketertarikan dalam membangun produk digital yang inovatif, 
+                    efisien, dan berorientasi pada kebutuhan pengguna.
+            </p>
+        </div>
     </div>
-
-    <div class="info-row">
-        <span>Universitas</span>
-        <span>Universitas Bakrie</span>
-    </div>
-
-    <div class="info-row">
-        <span>Program Studi</span>
-        <span>Sistem Informasi</span>
-    </div>
-
-        <div class="info-row">
-        <span>Email</span>
-        <span>1232002020@student.ac.id</span>
-    </div>
-
-    <div class="info-row">
-        <span>Semester</span>
-        <span>6</span>
-    </div>
-
-</div>
-
-<div class="card">
-    <h3>Tentang Saya</h3>
-
-    <p>
-    Mahasiswa Sistem Informasi yang memiliki minat pada Data Analytics,
-    Cloud Computing, Mobile Development, dan Web Development.
-    Berorientasi pada pemecahan masalah dan pengembangan solusi digital.
-    </p>
-</div>
-
-</div>
-
 </section>
-
-<section>
 <!-- =====================================
      RIWAYAT PENDIDIKAN
 ===================================== -->
-<section>
-
-    <h2 class="section-title">
-        Pendidikan
-    </h2>
-
+<section id="education">
+    <h2 class="section-title">Pendidikan</h2>
+    
     <div class="timeline">
-
         <div class="timeline-item">
             <h3>Universitas Bakrie</h3>
-            <span>2023 - Sekarang</span>
-            <p>Sistem Informasi</p>
-            <p>Semester 6</p>
+            <span class="timeline-date">2023 - Sekarang</span>
+            <p class="timeline-major">Sistem Informasi</p>
+            <p class="timeline-detail">Semester 6</p>
         </div>
 
         <div class="timeline-item">
             <h3>SMA</h3>
-            <span>2019 - 2022</span>
-            <p>Jurusan IPA</p>
+            <span class="timeline-date">2019 - 2022</span>
+            <p class="timeline-major">Jurusan IPA</p>
         </div>
-
     </div>
-
 </section>
 
 <!-- =====================================
      ORGANISASI & KEPEMIMPINAN
 ===================================== -->
-
 <section id="organization">
-
-    <h2 class="section-title">
-        Organisasi & Kepemimpinan
-    </h2>
-
+    <h2 class="section-title">Organisasi & Kepemimpinan</h2>
+    <div class="timeline">
         <div class="timeline-item">
             <h3>Himpunan Mahasiswa Sistem Informasi (HMSI)</h3>
-
             <span>2024 - 2026</span>
-
             <p>Ketua Divisi Produksi - Departemen Kewirausahaan</p>
-
             <p>
                 Mengelola proses produksi merchandise organisasi,
-                mengoordinasikan tim produksi, serta mendukung
+                mngoordinasikan tim produksi, serta mendukung
                 pelaksanaan program kewirausahaan mahasiswa melalui
                 kegiatan PROKSI (Program Keuangan Sistem Informasi).
             </p>
         </div>
 
         <div class="timeline-item">
-            <h3>PASKIBRA SMA </h3>
-
+            <h3>PASKIBRA SMA</h3>
             <span>2020 - 2022</span>
-
             <p>Anggota Aktif</p>
-
             <p>
                 Berpartisipasi dalam kegiatan upacara kenegaraan,
                 pelatihan kedisiplinan, kepemimpinan, dan kegiatan
                 representatif sekolah.
             </p>
         </div>
+    </div>
 </section>
 
-<section>
-
-<h2 class="section-title">
 <!-- =====================================
      TEKNOLOGI YANG DIGUNAKAN
 ===================================== -->
-Teknologi
-</h2>
-
-<div class="tech-stack">
-
-<span>GitHub</span>
-<span>Figma</span>
-<span>MySQL</span>
-<span>Flutter</span>
-<span>VS Code</span>
-<span>Power BI</span>
-<span>BPMN</span>
-<span>QGIS</span>
-<span>Excel</span>
-
-</div>
-
+<section id="technologies">
+    <h2 class="section-title">Teknologi</h2>
+    <div class="tech-stack">
+        <span>GitHub</span>
+        <span>Figma</span>
+        <span>MySQL</span>
+        <span>Flutter</span>
+        <span>VS Code</span>
+        <span>Power BI</span>
+        <span>BPMN</span>
+        <span>QGIS</span>
+        <span>Excel</span>
+    </div>
 </section>
 
-
-<section id="project-team">
-
-<h2 class="section-title">
 <!-- =====================================
      PROJECT TEAM
 ===================================== -->
-Project Team
-</h2>
-
-<div class="project-container">
-
-    <!-- CoffeeGo -->
-
-    <div class="project-card">
-
-        <div class="project-images">
-
-            <img src="images/Coffeego.png" alt="CoffeeGo Cover">
-
-            <img src="images/Coffeego-dokum.png" alt="CoffeeGo Dokumentasi">
-
+<section id="project-team">
+    <h2 class="section-title">Project Team</h2>
+    <div class="project-container">
+        <!-- CoffeeGo -->
+        <div class="project-card">
+            <div class="project-images">
+                <img src="images/Coffeego.png" alt="CoffeeGo Cover">
+                <img src="images/Coffeego-dokum.png" alt="CoffeeGo Dokumentasi">
+            </div>
+            <div class="project-content">
+                <h3>CoffeeGo</h3>
+                <p>
+                    CoffeeGo adalah platform agregator kedai kopi lokal dan franchise yang
+                    dirancang untuk mempermudah pemesanan, pembayaran digital, dan
+                    program loyalitas pelanggan. Solusi ini membantu UMKM kopi
+                    meningkatkan jangkauan pasar melalui transformasi digital.            
+                </p>
+                <p class="project-info"><strong>Peran:</strong> Business Analyst & System Analyst</p>
+                <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, Business Model Canvas</p>
+                <a href="https://drive.google.com/file/d/1jykCCZ_Cb0DBp4HyDF8_vv2tPgFfpJak/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
+            </div>
         </div>
 
-        <div class="project-content">
-
-            <h3>CoffeeGo</h3>
-
-            <p>
-            CoffeeGo adalah platform agregator kedai kopi lokal dan franchise yang
-            dirancang untuk mempermudah pemesanan, pembayaran digital, dan
-            program loyalitas pelanggan. Solusi ini membantu UMKM kopi
-            meningkatkan jangkauan pasar melalui transformasi digital.            
-            </p>
-
-            <p class="project-info"><strong>Peran:</strong> Business Analyst & System Analyst</p>
-
-            <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, Business Model Canvas</p>
-
-            <a href="https://drive.google.com/file/d/1jykCCZ_Cb0DBp4HyDF8_vv2tPgFfpJak/view?usp=sharing"
-               target="_blank"
-               class="project-btn">
-
-                Lihat Project
-
-            </a>
-
+        <!-- Project Kedua -->
+        <div class="project-card">
+            <div class="project-images">
+                <img src="images/Project-BPMN-dokum.png" alt="Login">
+                <img src="images/Project-BPMN.png" alt="Dashboard">
+            </div>
+            <div class="project-content">
+                <h3>Proses Bisnis Laspro Media Cinema</h3>
+                <p>
+                    Analisis dan redesign proses bisnis penyewaan alat produksi menggunakan
+                    BPMN. Proyek ini mencakup pemetaan proses As-Is, identifikasi masalah
+                    operasional, serta perancangan proses To-Be untuk meningkatkan
+                    efisiensi layanan dan pengelolaan inventaris perusahaan.
+                </p>
+                <p class="project-info"><strong>Peran:</strong> Business Process Analyst & BPMN Modeler</p>
+                <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, BPMN</p>
+                <a href="https://drive.google.com/file/d/1lGbgP3XiK0NQwzjaw7VSSB0WaKr1ODKI/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
+            </div>
         </div>
-
     </div>
-
-    <!-- Project Kedua -->
-
-    <div class="project-card">
-
-        <div class="project-images">
-
-            <img src="images/Project-BPMN-dokum.png" alt="Login">
-
-            <img src="images/Project-BPMN.png" alt="Dashboard">
-
-        </div>
-
-        <div class="project-content">
-
-            <h3>Proses Bisnis Laspro Media Cinema</h3>
-
-            <p>
-            Analisis dan redesign proses bisnis penyewaan alat produksi menggunakan
-            BPMN. Proyek ini mencakup pemetaan proses As-Is, identifikasi masalah
-            operasional, serta perancangan proses To-Be untuk meningkatkan
-            efisiensi layanan dan pengelolaan inventaris perusahaan.
-            </p>
-
-            <p><strong>Peran:</strong> Business Process Analyst & BPMN Modeler</p>
-
-            <p><strong>Teknologi:</strong> Figma, Canva, BPMN </p>
-
-            <a href="https://drive.google.com/file/d/1lGbgP3XiK0NQwzjaw7VSSB0WaKr1ODKI/view?usp=sharing"
-               target="_blank"
-               class="project-btn">
-
-                Lihat Project
-
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
 </section>
 
-<section id="project-individu">
-
-<h2 class="section-title">
 <!-- =====================================
      PROJECT INDIVIDU
 ===================================== -->
-
-Project Individu
-</h2>
-
-<div class="project-card">
-
-<img src="images/reservasi-dokter.jpg">
-
-<div class="project-content">
-
-<h3>Aplikasi Reservasi Dokter</h3>
-
-<p>
-Aplikasi berbasis Java yang menerapkan konsep OOP
-untuk melakukan reservasi jadwal dokter.
-</p>
-
-</div>
-
-</div>
-
+<section id="project-individu">
+    <h2 class="section-title">Project Individu</h2>
+    <div class="project-card">
+        <img src="images/reservasi-dokter.jpg" alt="Aplikasi Reservasi Dokter">
+        <div class="project-content">
+            <h3>Aplikasi Reservasi Dokter</h3>
+            <p>
+                Aplikasi berbasis Java yang menerapkan konsep OOP
+                untuk melakukan reservasi jadwal dokter.
+            </p>
+            <a href="#" class="project-btn">Lihat Project</a>
+        </div>
+    </div>
 </section>
 
-<h2 class="section-title">
 <!-- =====================================
      SKILLS / KEMAMPUAN
 ===================================== -->
-SKILLS
-</h2>
-
-<div class="card">
-
-    <!-- Data Analytics -->
-    <div class="skill">
-
-        <div class="skill-title">
-            <span>Data Analytics</span>
-            <span>75%</span>
+<section id="skills">
+    <h2 class="section-title">SKILLS</h2>
+    <div class="card">
+        <!-- Data Analytics -->
+        <div class="skill">
+            <div class="skill-title">
+                <span>Data Analytics</span>
+                <span>75%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:75%"></div>
+            </div>
         </div>
 
-        <div class="bar">
-            <div class="fill" style="width:75%"></div>
+        <!-- Database Management -->
+        <div class="skill">
+            <div class="skill-title">
+                <span>Database Management</span>
+                <span>85%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:85%"></div>
+            </div>
         </div>
 
+        <!-- Web Development -->
+        <div class="skill">
+            <div class="skill-title">
+                <span>Web Development</span>
+                <span>80%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:80%"></div>
+            </div>
+        </div>
+
+        <!-- Business Process Modeling -->
+        <div class="skill">
+            <div class="skill-title">
+                <span>Business Process Modeling</span>
+                <span>85%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:85%"></div>
+            </div>
+        </div>
+
+        <!-- Spatial Analysis -->
+        <div class="skill">
+            <div class="skill-title">
+                <span>Spatial Analysis</span>
+                <span>90%</span>
+            </div>
+            <div class="bar">
+                <div class="fill" style="width:90%"></div>
+            </div>
+        </div>
     </div>
-
-    <!-- Database Management -->
-    <div class="skill">
-
-        <div class="skill-title">
-            <span>Database Management</span>
-            <span>85%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width:85%"></div>
-        </div>
-
-    </div>
-
-    <!-- Web Development -->
-    <div class="skill">
-
-        <div class="skill-title">
-            <span>Web Development</span>
-            <span>80%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width:80%"></div>
-        </div>
-
-    </div>
-
-    <!-- Business Process Modeling -->
-    <div class="skill">
-
-        <div class="skill-title">
-            <span>Business Process Modeling</span>
-            <span>85%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width:85%"></div>
-        </div>
-
-    </div>
-
-    <!-- Spatial Analysis -->
-    <div class="skill">
-
-        <div class="skill-title">
-            <span>Spatial Analysis</span>
-            <span>90%</span>
-        </div>
-
-        <div class="bar">
-            <div class="fill" style="width:90%"></div>
-        </div>
-
-    </div>
-
-</div>
 </section>
 
-
-<section id="gallery">
-
-<h2 class="section-title">
 <!-- =====================================
      GALLERY FOTO
 ===================================== -->
-Gallery
-</h2>
-
-<div class="gallery">
-
-<img src="images/foto1.jpg">
-<img src="images/foto2.jpg">
-<img src="images/foto3.jpg">
-<img src="images/foto4.jpg">
-
-</div>
-
+<section id="gallery">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery">
+        <img src="images/foto1.jpg" alt="Gallery 1">
+        <img src="images/foto2.jpg" alt="Gallery 2">
+        <img src="images/foto3.jpg" alt="Gallery 3">
+        <img src="images/foto4.jpg" alt="Gallery 4">
+    </div>
 </section>
 
-<section id="contact">
-
-<h2 class="section-title">
 <!-- =====================================
      CONTACT
 ===================================== -->
-Contact
-</h2>
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact card">
+        <div class="contact-item">
+            <img src="images/email.png" alt="Email">
+            <a href="mailto:Willynathan86@email.com?subject=Halo Willy">Willynathan86@email.com</a>
+        </div>
 
+        <div class="contact-item">
+            <img src="images/phone.png" alt="Phone">
+            <span>+62 xxx xxxx xxxx</span>
+        </div>
 
-<div class="contact card">
-    <div class="contact-item">
-    <img src="images/email.png" alt="Email">
+        <div class="contact-item">
+            <img src="images/location.png" alt="Location">
+            <span>Jakarta, Indonesia</span>
+        </div>
 
-    <a href="mailto:Willynathan86@email.com?subject=Halo Willy">
-        Willynathan86@email.com
-    </a>
-</div>
+        <div class="contact-item">
+            <img src="images/linkedin.png" alt="LinkedIn">
+            <a href="https://www.linkedin.com/in/willy-jonatan-s-a44193283/" target="_blank">linkedin.Willy</a>
+        </div>
 
-    <div class="contact-item">
-        <img src="images/phone.png" alt="Phone">
-        <span>+62 xxx xxxx xxxx</span>
+        <div class="contact-item">
+            <img src="images/github.png" alt="GitHub">
+            <a href="https://github.com/willyjonatan" target="_blank">github.Willy</a>
+        </div>
     </div>
-
-    <div class="contact-item">
-        <img src="images/location.png" alt="Location">
-        <span>Jakarta, Indonesia</span>
-    </div>
-
-    <div class="contact-item">
-        <img src="images/linkedin.png" alt="LinkedIn">
-
-        <a href="https://www.linkedin.com/in/willy-jonatan-s-a44193283/"
-        target="_blank">
-
-            linkedin.Willy
-
-        </a>
-    </div>
-
-    <div class="contact-item">
-        <img src="images/github.png" alt="GitHub">
-
-        <a href="https://github.com/willyjonatan"
-        target="_blank">
-
-            github.Willy
-
-        </a>
-    </div>
-
-</div>
-
-</div>
-
-
-
 </section>
+
 <!-- =====================================
      FOOTER
 ===================================== -->
 <footer>
-    © 2026 Portfolio Mahasiswa | Willy Jonatan Sibagariang
-</footer>
+        © 2026 Portfolio Mahasiswa | Willy Jonatan Sibagariang
+    </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
