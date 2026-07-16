@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <!-- Tambahkan ini di dalam tag <head> index.html kamu -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Urbanist:ital,wght@0,400;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Mahasiswa - Willy Jonatan Sibagariang</title>
@@ -9,7 +16,7 @@
 <body>
 
 <nav>
-    <div class="logo">Ekonomi Informasi</div>
+    <div class="logo">Portofolio</div>
     <ul>
         <li><a href="#home" class="active">Home</a></li>
         <li class="dropdown">
@@ -32,20 +39,28 @@
 
     <div class="hero-text">
         <h1>Willy Jonatan<br>Sibagariang</h1>
-        <h2>Mahasiswa Sistem Informasi</h2>
-        <p>
-            Selamat datang di Portfolio Mahasiswa. Website ini berisi informasi mengenai 
-            profil, pengalaman, kemampuan, dan proyek yang telah saya kerjakan selama 
-            masa perkuliahan.
+
+        <p class="hero-statement">
+        Saya adalah mahasiswa Sistem Informasi Universitas Bakrie yang 
+        berfokus pada Web Development, Quality Assurance, dan Geographic Information Systems (GIS).
+        Melalui portfolio ini, saya membagikan pengalaman, keterampilan, 
+        serta berbagai proyek yang telah saya kerjakan selama masa perkuliahan. 
+        <span class="gradient-serif">Turning Ideas Into Digital Solutions.</span>
         </p>
+        
 
         <div class="stats">
+            <!-- Penambahan Kotak IPK -->
+            <div class="stat-box">
+                <h2>3.66</h2>
+                <span>IPK Sem. 6</span>
+            </div>
             <div class="stat-box">
                 <h2>10+</h2>
                 <span>Project</span>
             </div>
             <div class="stat-box">
-                <h2>5+</h2>
+                <h2>10+</h2>
                 <span>Teknologi</span>
             </div>
             <div class="stat-box">
@@ -61,11 +76,18 @@
 
     <div class="hero-image">
         <div class="hero-frame-container">
-            <img src="images/foto-willy.jpg" alt="Foto Willy Jonatan">
+            <!-- Efek Gelembung Animasi di Belakang Gambar -->
+            <div class="blob-bg"></div>
+            <div class="blob-bg blob-2"></div>
+            
+            <!-- Bingkai Garis Tipis Oranye -->
+            <div class="orange-border-frame"></div>
+            
+            <!-- Foto Utama -->
+            <img src="images/foto-willy.jpg" alt="Foto Willy Jonatan" class="profile-img">
         </div>
     </div>
-</section>
-<!-- =====================================
+</section><!-- =====================================
      BIODATA MAHASISWA
 ===================================== -->
 <section id="about" class="about-section">
@@ -133,6 +155,7 @@
     </div>
 </section>
 
+
 <!-- =====================================
      ORGANISASI & KEPEMIMPINAN
 ===================================== -->
@@ -167,68 +190,191 @@
 <!-- =====================================
      TEKNOLOGI YANG DIGUNAKAN
 ===================================== -->
-<section id="technologies">
-    <h2 class="section-title">Teknologi</h2>
-    <div class="tech-stack">
-        <span>GitHub</span>
-        <span>Figma</span>
-        <span>MySQL</span>
-        <span>Flutter</span>
-        <span>VS Code</span>
-        <span>Power BI</span>
-        <span>BPMN</span>
-        <span>QGIS</span>
-        <span>Excel</span>
+<section class="tech-stack-section" id="tech-stack">
+    <h2>Tech Stack</h2>
+    <div class="underline-decor"></div> <!-- Pastikan div ini ada -->
+    
+    <!-- Container Segmented Control -->
+    <div class="tab-buttons-container">
+        <div class="tab-segmented-wrapper">
+            <!-- Pastikan class 'active' ada di Tools saat pertama dimuat -->
+            <button class="tab-btn active" onclick="switchTab('tools')">
+                <i class='bx bx-wrench'></i> Tools <span class="badge">20</span>
+            </button>
+            <button class="tab-btn" onclick="switchTab('programming')">
+                <i class='bx bx-code-alt'></i> Languages <span class="badge">9</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Area Konten Grid -->
+    <div class="tech-grid-wrapper">
+        <!-- GRID 1: TOOLS (Aktif Pertama) -->
+        <div id="tools-content" class="tech-grid active">
+            <div class="tech-card brand-postman"><i class='bx bx-paper-plane'></i><span>Postman</span></div>
+            <div class="tech-card brand-selenium"><i class='bx bx-check-shield'></i><span>Selenium</span></div>
+            <div class="tech-card brand-pytest"><i class='bx bx-terminal'></i><span>Pytest</span></div>
+            <div class="tech-card brand-katalon"><i class='bx bx-shield-quarter'></i><span>Katalon</span></div>
+            <div class="tech-card brand-github"><i class='bx bxl-github'></i><span>GitHub</span></div>
+            <div class="tech-card brand-figma"><i class='bx bxl-figma'></i><span>Figma</span></div>
+            <div class="tech-card brand-vscode"><i class='bx bxl-visual-studio'></i><span>VS Code</span></div>
+            <div class="tech-card brand-mysql"><i class='bx bxl-postgresql'></i><span>MySQL</span></div>
+            <div class="tech-card brand-flutter"><i class='bx bxl-flutter'></i><span>Flutter</span></div>
+            <div class="tech-card brand-powerbi"><i class='bx bx-bar-chart-alt-2'></i><span>Power BI</span></div>
+            <div class="tech-card brand-qgis"><i class='bx bx-map-alt'></i><span>QGIS</span></div>
+            <div class="tech-card brand-earth-engine"><i class='bx bx-globe'></i><span>Earth Engine</span></div>
+            <div class="tech-card brand-colab"><i class='bx bxl-google'></i><span>Colab</span></div>
+            <div class="tech-card brand-excel"><i class='bx bxs-file-doc'></i><span>Excel</span></div>
+            <div class="tech-card brand-word"><i class='bx bxs-file-txt'></i><span>Word</span></div>
+            <div class="tech-card brand-canva"><i class='bx bx-paint'></i><span>Canva</span></div>
+            <div class="tech-card brand-docs"><i class='bx bxs-file'></i><span>Google Docs</span></div>
+            <div class="tech-card brand-sheets"><i class='bx bxs-spreadsheet'></i><span>Google Sheets</span></div>
+            <div class="tech-card brand-bpmn"><i class='bx bx-git-repo-forked'></i><span>BPMN</span></div>
+            <div class="tech-card brand-bizagi"><i class='bx bx-sitemap'></i><span>Bizagi Modeler</span></div>
+        </div>
+
+        <!-- GRID 2: BAHASA PEMROGRAMAN -->
+        <div id="programming-content" class="tech-grid">
+            <div class="tech-card brand-python"><i class='bx bxl-python'></i><span>Python</span></div>
+            <div class="tech-card brand-java"><i class='bx bxl-java'></i><span>Java</span></div>
+            <div class="tech-card brand-js"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
+            <div class="tech-card brand-ts"><i class='bx bxl-typescript'></i><span>TypeScript</span></div>
+            <div class="tech-card brand-html"><i class='bx bxl-html5'></i><span>HTML</span></div>
+            <div class="tech-card brand-css"><i class='bx bxl-css3'></i><span>CSS</span></div>
+            <div class="tech-card brand-flutter"><i class='bx bxl-flutter'></i><span>Dart</span></div>
+            <div class="tech-card brand-php"><i class='bx bxl-php'></i><span>PHP</span></div>
+            <div class="tech-card brand-sql"><i class='bx bx-data'></i><span>SQL</span></div>
+        </div>
     </div>
 </section>
-
 <!-- =====================================
      PROJECT TEAM
 ===================================== -->
 <section id="project-team">
     <h2 class="section-title">Project Team</h2>
-    <div class="project-container">
-        <!-- CoffeeGo -->
-        <div class="project-card">
-            <div class="project-images">
-                <img src="images/Coffeego.png" alt="CoffeeGo Cover">
-                <img src="images/Coffeego-dokum.png" alt="CoffeeGo Dokumentasi">
+    
+    <div class="project-slider-wrapper">
+        <button class="slider-btn prev-btn" aria-label="Project Sebelumnya">&#10094;</button>
+        
+        <div class="project-container">
+            <div class="project-card">
+                <div class="project-images">
+                    <img src="images/Coffeego.png" alt="CoffeeGo Cover">
+                    <img src="images/Coffeego-dokum.png" alt="CoffeeGo Dokumentasi">
+                </div>
+                <div class="project-content">
+                    <h3>CoffeeGo</h3>
+                    <p>
+                        CoffeeGo adalah platform agregator kedai kopi lokal dan franchise yang
+                        dirancang untuk mempermudah pemesanan, pembayaran digital, dan
+                        program loyalitas pelanggan. Solusi ini membantu UMKM kopi
+                        meningkatkan jangkauan pasar melalui transformasi digital.            
+                    </p>
+                    <p class="project-info"><strong>Peran:</strong> Business Analyst & System Analyst</p>
+                    <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, Business Model Canvas</p>
+                    <a href="https://drive.google.com/file/d/1jykCCZ_Cb0DBp4HyDF8_vv2tPgFfpJak/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
+                </div>
             </div>
-            <div class="project-content">
-                <h3>CoffeeGo</h3>
-                <p>
-                    CoffeeGo adalah platform agregator kedai kopi lokal dan franchise yang
-                    dirancang untuk mempermudah pemesanan, pembayaran digital, dan
-                    program loyalitas pelanggan. Solusi ini membantu UMKM kopi
-                    meningkatkan jangkauan pasar melalui transformasi digital.            
-                </p>
-                <p class="project-info"><strong>Peran:</strong> Business Analyst & System Analyst</p>
-                <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, Business Model Canvas</p>
-                <a href="https://drive.google.com/file/d/1jykCCZ_Cb0DBp4HyDF8_vv2tPgFfpJak/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
+
+            <div class="project-card">
+                <div class="project-images">
+                    <img src="images/Project-BPMN-dokum.png" alt="Login">
+                    <img src="images/Project-BPMN.png" alt="Dashboard">
+                </div>
+                <div class="project-content">
+                    <h3>Proses Bisnis Laspro Media Cinema</h3>
+                    <p>
+                        Analisis dan redesign proses bisnis penyewaan alat produksi menggunakan
+                        BPMN. Proyek ini mencakup pemetaan proses As-Is, identifikasi masalah
+                        operasional, serta perancangan proses To-Be untuk meningkatkan
+                        efisiensi layanan dan pengelolaan inventaris perusahaan.
+                    </p>
+                    <p class="project-info"><strong>Peran:</strong> Business Process Analyst & BPMN Modeler</p>
+                    <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, BPMN</p>
+                    <a href="https://drive.google.com/file/d/1lGbgP3XiK0NQwzjaw7VSSB0WaKr1ODKI/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-images">
+                    <img src="images/project3-1.png" alt="Cover">
+                    <img src="images/project3-2.png" alt="Dokumentasi">
+                </div>
+                <div class="project-content">
+                    <h3>Sistem Informasi Inventory</h3>
+                    <p>
+                        Pengembangan purwarupa sistem manajemen stok barang berbasis digital untuk 
+                        meminimalkan selisih pencatatan data logistik pada gudang ritel berskala menengah.
+                    </p>
+                    <p class="project-info"><strong>Peran:</strong> Fullstack Developer</p>
+                    <p class="project-info"><strong>Teknologi:</strong> MySQL, VS Code, PHP</p>
+                    <a href="#" class="project-btn">Lihat Project</a>
+                </div>
             </div>
         </div>
 
-        <!-- Project Kedua -->
-        <div class="project-card">
-            <div class="project-images">
-                <img src="images/Project-BPMN-dokum.png" alt="Login">
-                <img src="images/Project-BPMN.png" alt="Dashboard">
-            </div>
-            <div class="project-content">
-                <h3>Proses Bisnis Laspro Media Cinema</h3>
-                <p>
-                    Analisis dan redesign proses bisnis penyewaan alat produksi menggunakan
-                    BPMN. Proyek ini mencakup pemetaan proses As-Is, identifikasi masalah
-                    operasional, serta perancangan proses To-Be untuk meningkatkan
-                    efisiensi layanan dan pengelolaan inventaris perusahaan.
-                </p>
-                <p class="project-info"><strong>Peran:</strong> Business Process Analyst & BPMN Modeler</p>
-                <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, BPMN</p>
-                <a href="https://drive.google.com/file/d/1lGbgP3XiK0NQwzjaw7VSSB0WaKr1ODKI/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
-            </div>
-        </div>
+        <button class="slider-btn next-btn" aria-label="Project Berikutnya">&#10095;</button>
+    </div>
+
+    <div class="project-action-wrapper">
+        <button id="open-modal-btn" class="view-all-btn">Lihat Semua Proyek &rarr;</button>
     </div>
 </section>
+
+<div id="project-modal" class="project-modal-overlay">
+    <div class="project-modal-content">
+        <div class="modal-header">
+            <h2>Semua Project Team</h2>
+            <button id="close-modal-btn" class="close-modal-x">&times;</button>
+        </div>
+        
+        <div class="modal-grid-container">
+            
+            <div class="project-card animate-card">
+                <div class="project-images">
+                    <img src="images/Coffeego.png" alt="CoffeeGo Cover">
+                    <img src="images/Coffeego-dokum.png" alt="CoffeeGo Dokumentasi">
+                </div>
+                <div class="project-content">
+                    <h3>CoffeeGo</h3>
+                    <p>CoffeeGo adalah platform agregator kedai kopi lokal dan franchise...</p>
+                    <p class="project-info"><strong>Peran:</strong> Business Analyst & System Analyst</p>
+                    <p class="project-info"><strong>Teknologi:</strong> Figma, Canva</p>
+                    <a href="https://drive.google.com/file/d/1jykCCZ_Cb0DBp4HyDF8_vv2tPgFfpJak/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
+                </div>
+            </div>
+
+            <div class="project-card animate-card">
+                <div class="project-images">
+                    <img src="images/Project-BPMN-dokum.png" alt="Login">
+                    <img src="images/Project-BPMN.png" alt="Dashboard">
+                </div>
+                <div class="project-content">
+                    <h3>Proses Bisnis Laspro Media Cinema</h3>
+                    <p>Analisis dan redesign proses bisnis penyewaan alat produksi menggunakan BPMN...</p>
+                    <p class="project-info"><strong>Peran:</strong> Business Process Analyst & BPMN Modeler</p>
+                    <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, BPMN</p>
+                    <a href="https://drive.google.com/file/d/1lGbgP3XiK0NQwzjaw7VSSB0WaKr1ODKI/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
+                </div>
+            </div>
+
+            <div class="project-card animate-card">
+                <div class="project-images">
+                    <img src="images/project3-1.png" alt="Cover">
+                    <img src="images/project3-2.png" alt="Dokumentasi">
+                </div>
+                <div class="project-content">
+                    <h3>Sistem Informasi Inventory</h3>
+                    <p>Pengembangan purwarupa sistem manajemen stok barang berbasis digital...</p>
+                    <p class="project-info"><strong>Peran:</strong> Fullstack Developer</p>
+                    <p class="project-info"><strong>Teknologi:</strong> MySQL, PHP</p>
+                    <a href="#" class="project-btn">Lihat Project</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <!-- =====================================
      PROJECT INDIVIDU

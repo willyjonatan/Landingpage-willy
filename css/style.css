@@ -38,12 +38,26 @@ nav {
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
+/* ===================================================
+   STYLE LOGO: NORMAL & ELEGAN
+   =================================================== */
+
 .logo {
-    color: white;
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Menggunakan sistem font premium, bersih, dan rapi */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.15rem;       /* Ukuran pas, tidak terlalu besar (tidak mendominasi navbar) */
+    font-weight: 600;         /* Semi-bold, memberikan kesan tegas tapi tidak kasar */
+    color: #ffffff;           /* Putih bersih */
+    letter-spacing: 0.05em;   /* Renggang sedikit saja agar terlihat eksklusif */
+    text-transform: uppercase; /* Huruf besar semua biar rapi sejajar dengan menu navbar */
+    position: relative;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efek hover elegan: berubah warna jadi putih sedikit redup/soft oranye secara halus */
+.logo:hover {
+    color: #ff9800; /* Berubah ke warna aksen oranyemu secara smooth saat disentuh kursor */
 }
 
 nav ul {
@@ -201,23 +215,62 @@ nav ul li a.active {
     z-index: 5;
 }
 
+/* ===================================================
+   TYPOGRAPHY PREMIUM DENGAN GRADASI ORANYE-PUTIH
+   =================================================== */
+
+/* Mengatur Nama Utama (Menggunakan Space Grotesk) */
 .hero-text h1 {
-    font-size: 52px;
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 15px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.8rem;       /* Sedikit diperbesar agar dominan */
+    font-weight: 800;        /* Sangat tebal */
+    line-height: 1.2;
+    letter-spacing: -0.04em; /* Memberikan efek rapat dan estetik modern */
+    
+    /* Gradasi Oranye Senada ke Putih Bersih */
+    background: linear-gradient(135deg, #ff9800 0%, #e4ae5d 40%, #a7a5a5 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    /* Bayangan pendaran cahaya oranye tipis di belakang nama */
+    filter: drop-shadow(0 4px 15px rgba(233, 220, 201, 0.2));
+    margin-bottom: 35px !important;
 }
 
-.hero-text h2 {
-    font-size: 22px;
-    color: #f59e0b; 
-    font-weight: 600;
+/* Mengatur Paragraf Deskripsi di bawah Nama (Menggunakan Urbanist) */
+.hero-statement {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #817d7d;
+    max-width: 650px;
+    margin-top: 15px;
 }
+
+/* Efek Miring dan Gradasi pada Kata Terakhir ('empower people.') */
+.gradient-serif {
+    font-family: 'Urbanist', sans-serif;
+    font-style: italic;
+    font-weight: 600; /* Dibuat sedikit tebal miring */
+    
+    /* Gradasi Oranye-Putih sejalan dengan nama */
+    background: linear-gradient(to right, #ff9800, #d8d6d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    /* Glow lembut */
+    filter: drop-shadow(0 0 10px rgba(182, 144, 88, 0.25));
+}
+
+
 
 .hero-text p {
     font-size: 16px;
-    line-height: 1.7;
-    margin-top: 20px;
+    margin-bottom: 30px !important; /* Memberi jarak aman ke kotak IPK & Project */
+    line-height: 1.6;
     color: #cbd5e1;
     max-width: 520px;
 }
@@ -286,6 +339,79 @@ nav ul li a.active {
     align-items: center;
     z-index: 5;
 }
+
+/* ===================================================
+   EFEK ANIMASI GELEMBUNG CAIRAN DI BELAKANG FOTO
+   =================================================== */
+
+/* Container Utama Foto */
+.hero-frame-container {
+    position: relative;
+    width: 320px;   /* Sesuaikan dengan lebar fotomu */
+    height: 380px;  /* Sesuaikan dengan tinggi fotomu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Foto Utama dengan Potongan Sudut Unik */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 3;
+    /* Efek potongan diagonal kiri-atas & kanan-bawah sesuai gambarmu */
+    border-radius: 40px 0 40px 0; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+
+
+/* Gelembung Animasi 1 */
+.blob-bg {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.4) 0%, rgba(255, 87, 34, 0.2) 100%);
+    z-index: 1; /* Di belakang foto */
+    filter: blur(20px); /* Efek pendaran lembut */
+    
+    /* Membuat bentuk gelembung tidak beraturan */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    
+    /* Menjalankan animasi */
+    animation: liquid-blob 8s ease-in-out infinite alternate;
+}
+
+/* Gelembung Animasi 2 (Warna sedikit berbeda agar tumpang tindihnya estetik) */
+.blob-2 {
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(135deg, rgba(255, 204, 51, 0.3) 0%, rgba(255, 152, 0, 0.1) 100%);
+    animation: liquid-blob 12s ease-in-out infinite alternate-reverse;
+    animation-delay: -2s;
+}
+
+/* KEYFRAMES: Gerakan Cairan Mengalir */
+@keyframes liquid-blob {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: translate(0px, 0px) rotate(0deg) scale(1);
+    }
+    50% {
+        border-radius: 40% 60% 70% 30% / 50% 60% 30% 70%;
+        transform: translate(10px, -15px) rotate(90deg) scale(1.05);
+    }
+    100% {
+        border-radius: 70% 30% 50% 50% / 30% 50% 70% 70%;
+        transform: translate(-10px, 15px) rotate(180deg) scale(0.95);
+    }
+}
+
+/* =========================================================================
+   4.1 HERO IMAGE FRAME (MODERN ABSTRACT SHAPE)
+   ========================================================================= */
 
 .hero-frame-container {
     position: relative;
@@ -471,30 +597,193 @@ section::before {
     text-align: justify;
 }
 
-/* =========================================================================
-   7. TECH STACK & PROJECT (DARK OPTIMIZED)
-   ========================================================================= */
-.tech-stack{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
+/* ===================================================
+   FIX: MENYAMAKAN JUDUL TECH STACK DENGAN SECTION LAIN
+   =================================================== */
+
+.tech-stack-section h2 {
+    font-size: 2rem;          /* Atur ukuran besar teks (sesuaikan jika template-mu pakai 2.5rem) */
+    font-weight: 700;          /* Bikin tebal berisi */
+    color: #ffffff;            /* Warna putih terang */
+    margin-bottom: 8px;        /* Jarak ke garis bawah */
+    text-align: center !important; 
+    display: block;
+    width: 100%;
 }
 
-.tech-stack span{
-    background: linear-gradient(135deg, #d97706, #b45309);
-    color:white;
-    padding:12px 20px;
-    border-radius:30px;
-    font-weight:600;
-    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.15);
-    transition:.3s;
+/* Memperbaiki garis dekorasi oranye di bawah judul */
+.tech-stack-section .underline-decor {
+    width: 50px;               /* Lebar garis oranye */
+    height: 4px;               /* Tebal garis */
+    background: #ff9800;       /* Warna oranye tema kamu */
+    margin: 0 auto;            /* Posisi otomatis di tengah */
+    border-radius: 2px;
 }
 
-.tech-stack span:hover{
-    background: linear-gradient(135deg, #b45309, #78350f);
-    transform:translateY(-3px);
-    box-shadow: 0 6px 15px rgba(217, 119, 6, 0.3);
+/* Jarak container tombol dari garis dekorasi */
+.tab-buttons-container {
+    display: flex;
+    justify-content: center;   /* Ini yang bertugas dorong ke tengah */
+    align-items: center;
+    width: 100%;               /* Memastikan container memakan lebar penuh area */
+    margin-top: 35px;          
+    margin-bottom: 40px;
+}
+/* Container Tombol Bersebelahan */
+.tab-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Kapsul Panjang Hitam Luar (Sesuai Gambar Referensi) */
+.tab-segmented-wrapper {
+    display: flex;
+    background: #0d1117; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6px;
+    border-radius: 30px;
+    gap: 8px;
+    width: 350px; /* Mengunci total lebar kapsul hitam agar pas untuk dua tombol */
+}
+
+/* Base Tombol di Dalam Kapsul */
+.tab-btn {
+    flex: 1; /* Membuat kedua tombol otomatis membagi area sama rata secara adil */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: #8b949e; 
+    padding: 12px 0;
+    border-radius: 24px; /* Sudut melengkung di dalam kapsul */
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* KETIKA AKTIF: Mengisi Kapsul dengan Warna Oranye Tema Kamu */
+.tab-btn.active {
+    background: #ff9800;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+/* Aksen Ikon Oranye saat tidak aktif */
+.tab-btn i {
+    font-size: 1.1rem;
+}
+.tab-btn:not(.active) i {
+    color: #ff9800;
+}
+
+/* Badge Jumlah */
+.badge {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: #fff;
+    margin-left: 4px;
+}
+
+.tab-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+}
+/* Wrapper Grid Konten (Dengan border tipis elegan sesuai gambar) */
+.tech-grid-wrapper {
+    max-width: 1200px;                           /* <--- NILAI INI YANG MENYELARASKAN DENGAN PROJECT TEAM */
+    margin: 0 auto;                              /* Membuat kotak pembungkus otomatis di tengah */
+    background: rgba(255, 255, 255, 0.015);      /* Kotak abu transparan tipis pembungkus logo */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Garis grid tipis melengkung yang kamu mau */
+    border-radius: 20px;
+    padding: 40px 30px;
+    min-height: 250px;
+    box-sizing: border-box;                      /* Memastikan padding tidak merusak lebar */
+}
+
+/* Grid Layout */
+.tech-grid {
+    display: none; 
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Responsif & presisi */
+    gap: 20px;
+}
+
+.tech-grid.active {
+    display: grid; 
+    animation: fadeIn 0.4s ease;
+}
+
+/* Style Card Box */
+.tech-card {
+    background: rgba(253, 253, 253, 0.03); /* Tetap pakai background tipis di masing-masing card logo agar terlihat mengambang */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.tech-card i {
+    font-size: 2.4rem;
+}
+
+.tech-card span {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tech-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-5px);
+    border-color: rgba(255, 152, 0, 0.3);
+}
+
+/* ===================================================
+   WARNA ASLI BRAND SESUAI LOGO ASLINYA
+   =================================================== */
+.brand-python i { color: #3776AB; }
+.brand-java i { color: #007396; }
+.brand-js i { color: #F7DF1E; }
+.brand-ts i { color: #3178C6; }
+.brand-html i { color: #E34F26; }
+.brand-css i { color: #1572B6; }
+.brand-flutter i { color: #02569B; }
+.brand-php i { color: #777BB4; }
+.brand-sql i { color: #00758F; }
+.brand-github i { color: #FFFFFF; }
+.brand-figma i { color: #F24E1E; }
+.brand-vscode i { color: #007ACC; }
+.brand-mysql i { color: #4479A1; }
+.brand-powerbi i { color: #F2C811; }
+.brand-qgis i { color: #589632; }
+.brand-earth-engine i { color: #4285F4; }
+.brand-colab i { color: #F9AB00; }
+.brand-postman i { color: #FF6C37; }
+.brand-selenium i { color: #43B02A; }
+.brand-pytest i { color: #0A9EDC; }
+.brand-katalon i { color: #3662E3; }
+.brand-excel i { color: #107C41; }
+.brand-word i { color: #185ABD; }
+.brand-canva i { color: #00C4CC; }
+.brand-docs i { color: #4285F4; }
+.brand-sheets i { color: #0F9D58; }
+.brand-bpmn i { color: #FF9800; }
+.brand-bizagi i { color: #107C41; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .project-container{
@@ -819,5 +1108,377 @@ footer{
     }
     .bio-value {
         text-align: left;
+    }
+}
+
+/* --- Tambahan Sistem Slider Baru --- */
+.project-slider-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Modifikasi container agar berjejer horizontal ke kanan */
+.project-container {
+    display: flex !important; /* Mengubah grid menjadi flex horizontal */
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 5px;
+    width: 100%;
+    /* Menyembunyikan scrollbar bawaan browser agar terlihat bersih */
+    scrollbar-width: none; /* Firefox */
+}
+
+.project-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Memastikan ukuran lebar kartu konsisten saat berjejer */
+.project-card {
+    flex: 0 0 calc(50% - 12px); /* Menampilkan 2 kartu sekaligus di desktop */
+    min-width: 320px; /* Batas lebar minimum kartu */
+    height: auto;
+}
+
+/* Desain Premium Tombol Navigasi Panah Amber Gold */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.9), rgba(180, 83, 9, 0.9));
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-btn:hover {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Contoh jika class tombol panah kirinya menggunakan nama ini */
+.slider-btn.prev, 
+.prev-btn {
+    left: -60px !important; /* Diubah jadi minus lebih besar agar makin geser ke kiri luar */
+}
+
+/* Contoh jika class tombol panah kanannya menggunakan nama ini */
+.slider-btn.next, 
+.next-btn {
+    right: -60px !important; /* Diubah jadi minus lebih besar agar makin geser ke kanan luar */
+}
+
+/* Penyesuaian Responsif Layar Smartphone */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 0 0 100%; /* Menampilkan 1 kartu penuh per slide di HP */
+    }
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .prev-btn { left: -10px; }
+    .next-btn { right: -10px; }
+}
+
+/* --- SOLUSI MUTLAK: JUDUL DI TENGAH, TOMBOL DI KANAN --- */
+.project-header-container {
+    position: relative; /* Menjadi patokan jangkar untuk tombol */
+    display: flex;
+    justify-content: center; /* Memaksa Judul "Project Team" MUTLAK di tengah */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+/* --- Memaksa Judul Tetap di Tengah Halaman --- */
+#project-team .section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+/* --- Pembungkus Tombol Baru di Bawah Slider (Mendorong ke Kanan) --- */
+.project-action-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Dorong isi kontainer ke kanan mentok */
+    width: 100%;
+    margin-top: 35px; /* Jarak pas dari bawah kartu ke tombol */
+    padding-right: 5px; /* Menyelaraskan kelurusan sejajar dengan ujung kartu */
+}
+
+/* Desain Tombol "Lihat Semua Proyek" */
+.view-all-btn {
+    background: transparent;
+    color: #fbbf24;
+    border: 2px solid rgba(217, 119, 6, 0.4);
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+    background: rgba(217, 119, 6, 0.1);
+    border-color: #f59e0b;
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsif Layar HP: Tombol otomatis ke tengah jika di layar kecil agar rapi */
+@media (max-width: 768px) {
+    .project-action-wrapper {
+        justify-content: center;
+        padding-right: 0;
+    }
+}
+
+/* =========================================================================
+   PERBAIKAN PREMIUM: UI MODAL POP-UP (MELEBAR & LEGA)
+   ========================================================================= */
+.project-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 9, 15, 0.75); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 10px; /* Jaga-jaga agar tidak mentok layar di HP */
+}
+
+.project-modal-overlay.modal-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* KOTAK KONTEN UTAMA - KITA LEBARKAN DI SINI */
+.project-modal-content {
+    background: #111625; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    
+    /* SOLUSI MELEBAR UTAMA: Hampir menyentuh pinggir layar */
+    width: 95%; 
+    max-width: 1600px; /* Batas lebar maksimal baru (jauh lebih lebar) */
+    
+    height: 85vh; 
+    border-radius: 20px;
+    padding: 40px; /* Diperlebar agar lebih lega */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    transform: scale(0.95) translateY(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-modal-overlay.modal-open .project-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* Header di dalam Modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 25px;
+    margin-bottom: 30px; 
+}
+
+.modal-header h2 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.close-modal-x {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.close-modal-x:hover {
+    color: #f59e0b;
+    background: rgba(217, 119, 6, 0.1);
+    border-color: rgba(217, 119, 6, 0.3);
+}
+
+/* AREA GRID KONTEN - KITA SESUAIKAN KOLOMNYA */
+/* AREA GRID KONTEN - PERBAIKAN AGAR OTOMATIS DI TENGAH */
+.modal-grid-container {
+    display: grid;
+    
+    /* Menggunakan auto-fit dengan batas lebar minimum kartu 340px dan maksimal 1fr.
+       Jika layar lebar dan proyek baru ada 2, kartu tidak akan melar merusak layout. */
+    grid-template-columns: repeat(auto-fit, minmax(340px, 420px));
+    
+    /* SOLUSI UTAMA: Memaksa semua kartu proyek berkumpul tepat di tengah modal */
+    justify-content: center;
+    
+    gap: 35px; /* Celah antar kartu tetap lega dan premium */
+    overflow-y: auto;
+    padding: 5px 15px 15px 5px;
+}
+
+/* Modifikasi Kartu Khusus Di Dalam Modal */
+.modal-grid-container .project-card {
+    flex: none !important;
+    width: 100% !important;
+    background: #171e30; 
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    margin: 0;
+}
+
+/* Responsif Ponsel pintar */
+@media (max-width: 1200px) {
+    .modal-grid-container {
+        /* Di layar tablet/menengah, gunakan sistem auto-fill standar */
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .project-modal-content {
+        padding: 20px;
+        width: 100%; /* Mentok layar di HP */
+        max-height: 90vh;
+    }
+    .modal-grid-container {
+        grid-template-columns: 1fr; /* 1 kolom penuh saja di HP */
+        gap: 20px;
+    }
+}
+
+/* ===================================================
+   STYLE UNTUK Deskripsi (HERO STATEMENT)
+   =================================================== */
+
+/* Import font Serif mewah dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,700&display=swap');
+
+.hero-statement {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 2rem; /* Ukuran teks dibuat besar dan mencolok */
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 20px 0; /* Memberi jarak atas & bawah */
+    max-width: 600px; /* Membatasi lebar agar teks turun ke bawah dengan rapi */
+}
+
+/* Efek miring dan gradasi warna emas/silver pada kata 'empower people.' */
+.gradient-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    
+    /* Gradasi warna emas lembut (bisa diganti sesuai seleramu) */
+    background: linear-gradient(to right, #ffb347, #ffcc33); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Efek glow/pantulan cahaya halus di belakang teks */
+    text-shadow: 0 0 20px rgba(255, 179, 71, 0.2);
+}
+
+
+
+/* =====================================
+   RESPONSIVE DESIGN (UNTUK ANDROID & IPHONE)
+===================================== */
+
+@media screen and (max-width: 768px) {
+    /* 1. Merapikan susunan navbar agar tidak menumpuk */
+    nav {
+        padding: 15px 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    /* Mengatur menu list agar sejajar horizontal dalam 1 baris */
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important; 
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Menyesuaikan ukuran teks menu di HP */
+    nav ul li a {
+        font-size: 0.85rem !important; 
+        padding: 6px 10px !important; 
+    }
+
+    /* Menyesuaikan tombol Home yang aktif */
+    nav ul li a.active {
+        padding: 6px 12px !important;
+        border-radius: 8px !important;
+    }
+
+    /* 2. Mengatur container stats menjadi grid 2x2 di HP (Biar IPK tidak terpotong) */
+    .stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 12px !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Memastikan ukuran kotak pas di layar HP */
+    .stat-box {
+        width: auto !important;
+        padding: 12px 8px !important;
+        text-align: center !important;
+    }
+
+    .stat-box h2 {
+        font-size: 1.5rem !important; 
+        margin-bottom: 2px !important;
+    }
+
+    .stat-box span {
+        font-size: 0.75rem !important; 
     }
 }

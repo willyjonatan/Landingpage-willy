@@ -85,3 +85,100 @@ dropdownLinks.forEach(link => {
         }
     });
 });
+
+// =========================================================================
+// 4. PROJECT TEAM SLIDER SYSTEM
+// Mengatur pergeseran horizontal kartu proyek menggunakan tombol panah
+// =========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.project-container');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (container && prevBtn && nextBtn) {
+        // Fungsi membaca lebar 1 kartu proyek secara dinamis beserta celah gap-nya
+        const getScrollAmount = () => {
+            const card = container.querySelector('.project-card');
+            if (card) {
+                const cardWidth = card.getBoundingClientRect().width;
+                return cardWidth + 24; // 24 didapat dari ukuran gap CSS
+            }
+            return 300; // nilai cadangan (fallback)
+        };
+
+        // Event saat tombol panah kanan diklik
+        nextBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: getScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+
+        // Event saat tombol panah kiri diklik
+        prevBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: -getScrollAmount(),
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// =========================================================================
+// 5. PROJECT MODAL POP-UP SYSTEM (VIEW ALL GRID)
+// Mengatur sistem buka tutup jendela pop-up proyek lengkap
+// =========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('project-modal');
+    const openBtn = document.getElementById('open-modal-btn');
+    const closeBtn = document.getElementById('close-modal-btn');
+
+    if (modal && openBtn && closeBtn) {
+        // Buka Modal
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('modal-open');
+            document.body.style.overflow = 'hidden'; // Kunci scroll halaman utama belakang
+        });
+
+        // Tutup Modal lewat tombol X
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('modal-open');
+            document.body.style.overflow = ''; // Aktifkan kembali scroll utama
+        });
+
+        // Tutup Modal otomatis jika pengguna klik area luar kotak hitam modal
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('modal-open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
+
+// =========================================================================
+// 6. TECH STACK SYSTEM TAB INTERAKTIF
+// Mengatur fungsionalitas klik perpindahan tab antara bahasa & tools
+// =========================================================================
+function switchTab(tabName) {
+    // 1. Hapus class 'active' dari semua tombol tab
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // 2. Hapus class 'active' dari semua grid konten tech stack
+    const grids = document.querySelectorAll('.tech-grid');
+    grids.forEach(grid => grid.classList.remove('active'));
+    
+    // 3. Tambahkan class 'active' ke tombol yang baru saja diklik
+    const clickedButton = window.event.currentTarget;
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+    
+    // 4. Tampilkan grid konten yang sesuai dengan id target
+    const targetGrid = document.getElementById(tabName + '-content');
+    if (targetGrid) {
+        targetGrid.classList.add('active');
+    }
+}
+
