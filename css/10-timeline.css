@@ -81,3 +81,420 @@
     font-weight:600;
     color:#f59e0b;
 }
+
+/* =========================================================================
+   ORGANISASI - SPLIT LAYOUT (KIRI: CARD | KANAN: FOTO)
+   ========================================================================= */
+
+.org-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    align-items: stretch;
+}
+
+/* ============================================
+   SISI KIRI - CARD HMSI (DIPERPANJANG)
+   ============================================ */
+
+.org-left {
+    display: flex;
+    align-items: stretch;
+}
+
+.org-card-hmsi {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    background: rgba(26, 32, 44, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    min-height: 480px; /* ← DIPERPANJANG */
+}
+
+.org-card-hmsi:hover {
+    border-color: rgba(217, 119, 6, 0.3);
+    box-shadow: 0 20px 40px rgba(217, 119, 6, 0.1);
+}
+
+/* Tampilan Depan Card */
+.org-card-front-only {
+    padding: 50px 30px; /* ← Ditambah padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 480px; /* ← DIPERPANJANG */
+    height: 100%;
+    transition: all 0.4s ease;
+}
+
+.org-card-front-only .org-icon-wrapper {
+    width: 90px; /* ← DIPERBESAR */
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(180, 83, 9, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    border: 2px solid rgba(217, 119, 6, 0.3);
+    transition: all 0.3s ease;
+}
+
+.org-card-front-only .org-icon-wrapper i {
+    font-size: 44px; /* ← DIPERBESAR */
+    color: #f59e0b;
+}
+
+.org-card-front-only h3 {
+    color: #ffffff;
+    font-size: 28px; /* ← DIPERBESAR */
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.org-card-front-only .org-role {
+    color: #f59e0b;
+    font-size: 17px; /* ← DIPERBESAR */
+    font-weight: 600;
+    background: rgba(217, 119, 6, 0.1);
+    padding: 8px 22px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.org-card-front-only .org-period {
+    color: #94a3b8;
+    font-size: 16px; /* ← DIPERBESAR */
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.org-card-front-only .org-hover-hint {
+    color: #64748b;
+    font-size: 14px; /* ← DIPERBESAR */
+    letter-spacing: 1px;
+    animation: pulse-hint 2s ease-in-out infinite;
+}
+
+/* Detail Card (muncul saat hover) */
+.org-card-detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px 25px; /* ← Ditambah padding */
+    background: rgba(20, 25, 35, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.org-card-hmsi:hover .org-card-detail {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.org-card-hmsi:hover .org-card-front-only {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.org-card-detail::-webkit-scrollbar {
+    width: 4px;
+}
+
+.org-card-detail::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.org-card-detail::-webkit-scrollbar-thumb {
+    background: #d97706;
+    border-radius: 10px;
+}
+
+.org-card-detail h4 {
+    color: #ffffff;
+    font-size: 20px; /* ← DIPERBESAR */
+    font-weight: 700;
+    margin-bottom: 18px;
+    border-bottom: 2px solid rgba(217, 119, 6, 0.3);
+    padding-bottom: 14px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.org-card-detail .org-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* ← Ditambah gap */
+    flex: 1;
+}
+
+.org-card-detail .org-activity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 16px; /* ← Ditambah padding */
+    border-radius: 10px;
+    border-left: 3px solid #d97706;
+    transition: all 0.3s ease;
+}
+
+.org-card-detail .org-activity-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(4px);
+}
+
+.org-card-detail .org-activity-item .activity-date {
+    color: #f59e0b;
+    font-size: 12px; /* ← DIPERBESAR */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.org-card-detail .org-activity-item p {
+    color: #cbd5e1;
+    font-size: 14px; /* ← DIPERBESAR */
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+
+@keyframes pulse-hint {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* ============================================
+   SISI KANAN - DOKUMENTASI (4 FOTO 2x2)
+   ============================================ */
+
+.org-right {
+    display: flex;
+    align-items: stretch;
+}
+
+.org-doc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px; /* ← Ditambah gap */
+    width: 100%;
+    height: 100%;
+    min-height: 480px; /* ← Disesuaikan dengan card */
+}
+
+.org-doc-item {
+    position: relative;
+    border-radius: 16px; /* ← DIPERBESAR */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.org-doc-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.org-doc-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(217, 119, 6, 0.3);
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.15);
+}
+
+.org-doc-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlay Caption */
+.org-doc-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    padding: 35px 14px 14px; /* ← Ditambah padding */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.org-doc-item:hover .org-doc-overlay {
+    opacity: 1;
+}
+
+.org-doc-overlay span {
+    color: #ffffff;
+    font-size: 14px; /* ← DIPERBESAR */
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================
+   RESPONSIF
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .org-split-layout {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 30px;
+    }
+    
+    .org-card-hmsi {
+        min-height: 420px;
+    }
+    
+    .org-card-front-only {
+        min-height: 420px;
+    }
+    
+    .org-doc-grid {
+        min-height: 420px;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .org-split-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .org-left {
+        display: block;
+    }
+    
+    .org-card-hmsi {
+        min-height: 360px;
+    }
+    
+    .org-card-front-only {
+        min-height: 360px;
+        padding: 35px 25px;
+    }
+    
+    .org-card-front-only h3 {
+        font-size: 22px;
+    }
+    
+    .org-card-front-only .org-icon-wrapper {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .org-card-front-only .org-icon-wrapper i {
+        font-size: 34px;
+    }
+    
+    .org-card-front-only .org-role {
+        font-size: 15px;
+    }
+    
+    .org-card-front-only .org-period {
+        font-size: 14px;
+    }
+    
+    .org-right {
+        display: block;
+    }
+    
+    .org-doc-grid {
+        min-height: 320px;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .org-card-hmsi {
+        min-height: 300px;
+    }
+    
+    .org-card-front-only {
+        min-height: 300px;
+        padding: 25px 18px;
+    }
+    
+    .org-card-front-only h3 {
+        font-size: 18px;
+    }
+    
+    .org-card-front-only .org-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .org-card-front-only .org-icon-wrapper i {
+        font-size: 28px;
+    }
+    
+    .org-card-front-only .org-role {
+        font-size: 13px;
+        padding: 5px 14px;
+    }
+    
+    .org-card-front-only .org-period {
+        font-size: 13px;
+    }
+    
+    .org-card-front-only .org-hover-hint {
+        font-size: 12px;
+    }
+    
+    .org-card-detail {
+        padding: 18px 14px;
+    }
+    
+    .org-card-detail h4 {
+        font-size: 16px;
+    }
+    
+    .org-card-detail .org-activity-item {
+        padding: 8px 12px;
+    }
+    
+    .org-card-detail .org-activity-item p {
+        font-size: 12px;
+    }
+    
+    .org-card-detail .org-activity-item .activity-date {
+        font-size: 10px;
+    }
+    
+    .org-doc-grid {
+        min-height: 260px;
+        gap: 10px;
+    }
+    
+    .org-doc-overlay span {
+        font-size: 11px;
+    }
+}

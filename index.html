@@ -7,16 +7,18 @@
     
     <!-- Boxicons untuk Ikon Modern -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Urbanist:ital,wght@0,400;0,600;1,500;1,600&display=swap" rel="stylesheet">
-    <!-- Scroll Progress Bar -->
-<div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- ===== TAMBAHKAN INI ===== -->
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.24/dist/lenis.css">
+    
     <!-- CSS Kustom Utama -->
     <link rel="stylesheet" href="css/style.css">
-    
 </head>
 <body>
 
@@ -162,32 +164,76 @@
 </section>
 
 <!-- =====================================
-     ORGANISASI & KEPEMIMPINAN
+     ORGANISASI & KEPEMIMPINAN (SPLIT LAYOUT)
 ===================================== -->
 <section id="organization">
     <h2 class="section-title">Organisasi & Kepemimpinan</h2>
-    <div class="timeline">
-        <div class="timeline-item">
-            <h3>Himpunan Mahasiswa Sistem Informasi (HMSI)</h3>
-            <span>2024 - 2026</span>
-            <p>Ketua Divisi Produksi - Departemen Kewirausahaan</p>
-            <p>
-                Mengelola proses produksi merchandise organisasi,
-                mngoordinasikan tim produksi, serta mendukung
-                pelaksanaan program kewirausahaan mahasiswa melalui
-                kegiatan PROKSI (Program Keuangan Sistem Informasi).
-            </p>
+    
+    <div class="org-split-layout">
+        <!-- === SISI KIRI: CARD HMSI === -->
+        <div class="org-left">
+            <div class="org-card-hmsi">
+                <div class="org-card-front-only">
+                    <div class="org-icon-wrapper">
+                        <i class='bx bxs-group'></i>
+                    </div>
+                    <h3>Himpunan Mahasiswa<br>Sistem Informasi</h3>
+                    <span class="org-role">Ketua Divisi Produksi</span>
+                    <span class="org-period">2024 - 2026</span>
+                    <div class="org-hover-hint">Arahkan kursor untuk detail ➜</div>
+                </div>
+                <div class="org-card-detail">
+                    <h4>📋 Rangkaian Kegiatan</h4>
+                    <div class="org-activity-list">
+                        <div class="org-activity-item">
+                            <span class="activity-date">Feb 2024</span>
+                            <p>📦 Produksi merchandise HMSI untuk acara PKKMB</p>
+                        </div>
+                        <div class="org-activity-item">
+                            <span class="activity-date">Jun 2024</span>
+                            <p>📊 Koordinasi tim produksi untuk PROKSI 2024</p>
+                        </div>
+                        <div class="org-activity-item">
+                            <span class="activity-date">Sep 2024</span>
+                            <p>🎯 Pelaksanaan Program Keuangan Sistem Informasi (PROKSI)</p>
+                        </div>
+                        <div class="org-activity-item">
+                            <span class="activity-date">Feb 2025</span>
+                            <p>🔄 Evaluasi dan perencanaan produksi HMSI 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="timeline-item">
-            <h3>PASKIBRA SMA</h3>
-            <span>2020 - 2022</span>
-            <p>Anggota Aktif</p>
-            <p>
-                Berpartisipasi dalam kegiatan upacara kenegaraan,
-                pelatihan kedisiplinan, kepemimpinan, dan kegiatan
-                representatif sekolah.
-            </p>
+        <!-- === SISI KANAN: DOKUMENTASI (4 FOTO) === -->
+        <div class="org-right">
+            <div class="org-doc-grid">
+                <div class="org-doc-item">
+                    <img src="images/doc-hmsi1.jpg" alt="Produksi HMSI">
+                    <div class="org-doc-overlay">
+                        <span>📦 Produksi HMSI</span>
+                    </div>
+                </div>
+                <div class="org-doc-item">
+                    <img src="images/doc-hmsi2.jpg" alt="Rapat HMSI">
+                    <div class="org-doc-overlay">
+                        <span>📊 Rapat HMSI</span>
+                    </div>
+                </div>
+                <div class="org-doc-item">
+                    <img src="images/doc-hmsi3.jpg" alt="PROKSI HMSI">
+                    <div class="org-doc-overlay">
+                        <span>🎯 PROKSI HMSI</span>
+                    </div>
+                </div>
+                <div class="org-doc-item">
+                    <img src="images/doc-hmsi4.jpg" alt="Evaluasi HMSI">
+                    <div class="org-doc-overlay">
+                        <span>🔄 Evaluasi HMSI</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -317,64 +363,10 @@
         <button class="slider-btn next-btn" aria-label="Project Berikutnya">&#10095;</button>
     </div>
 
-    <div class="project-action-wrapper">
-        <button id="open-modal-btn" class="view-all-btn">Lihat Semua Proyek &rarr;</button>
-    </div>
+
 </section>
 
 <!-- Modal View All -->
-<div id="project-modal" class="project-modal-overlay">
-    <div class="project-modal-content">
-        <div class="modal-header">
-            <h2>Semua Project Team</h2>
-            <button id="close-modal-btn" class="close-modal-x">&times;</button>
-        </div>
-        
-        <div class="modal-grid-container">
-            <div class="project-card animate-card">
-                <div class="project-images">
-                    <img src="images/Coffeego.png" alt="CoffeeGo Cover">
-                    <img src="images/Coffeego-dokum.png" alt="CoffeeGo Dokumentasi">
-                </div>
-                <div class="project-content">
-                    <h3>CoffeeGo</h3>
-                    <p>CoffeeGo adalah platform agregator kedai kopi lokal dan franchise...</p>
-                    <p class="project-info"><strong>Peran:</strong> Business Analyst & System Analyst</p>
-                    <p class="project-info"><strong>Teknologi:</strong> Figma, Canva</p>
-                    <a href="https://drive.google.com/file/d/1jykCCZ_Cb0DBp4HyDF8_vv2tPgFfpJak/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
-                </div>
-            </div>
-
-            <div class="project-card animate-card">
-                <div class="project-images">
-                    <img src="images/Project-BPMN-dokum.png" alt="Login">
-                    <img src="images/Project-BPMN.png" alt="Dashboard">
-                </div>
-                <div class="project-content">
-                    <h3>Proses Bisnis Laspro Media Cinema</h3>
-                    <p>Analisis dan redesign proses bisnis penyewaan alat produksi menggunakan BPMN...</p>
-                    <p class="project-info"><strong>Peran:</strong> Business Process Analyst & BPMN Modeler</p>
-                    <p class="project-info"><strong>Teknologi:</strong> Figma, Canva, BPMN</p>
-                    <a href="https://drive.google.com/file/d/1lGbgP3XiK0NQwzjaw7VSSB0WaKr1ODKI/view?usp=sharing" target="_blank" class="project-btn">Lihat Project</a>
-                </div>
-            </div>
-
-            <div class="project-card animate-card">
-                <div class="project-images">
-                    <img src="images/project3-1.png" alt="Cover">
-                    <img src="images/project3-2.png" alt="Dokumentasi">
-                </div>
-                <div class="project-content">
-                    <h3>Sistem Informasi Inventory</h3>
-                    <p>Pengembangan purwarupa sistem manajemen stok barang berbasis digital...</p>
-                    <p class="project-info"><strong>Peran:</strong> Fullstack Developer</p>
-                    <p class="project-info"><strong>Teknologi:</strong> MySQL, PHP</p>
-                    <a href="#" class="project-btn">Lihat Project</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- =====================================
      PROJECT INDIVIDU
@@ -504,6 +496,14 @@
 <footer>
     © 2026 Portfolio Mahasiswa | Willy Jonatan Sibagariang
 </footer>
+
+<!-- =====================================
+     SCRIPTS
+===================================== -->
+<!-- ===== TAMBAHKAN INI ===== -->
+<!-- Lenis Smooth Scroll JS (CDN) -->
+<script src="https://unpkg.com/lenis@1.3.24/dist/lenis.min.js"></script>
+
 
 <script src="JS/script.js"></script>
 </body>

@@ -1,5 +1,4 @@
 // Di file JavaScript utama
-import Lenis from 'lenis'
 // =========================================================================
 // 1. ACTIVE NAVIGATION LINK & SMOOTH SCROLL ACCURACY
 // Otomatis mengubah menu aktif di navbar sesuai posisi scroll layar
@@ -184,3 +183,148 @@ function switchTab(tabName) {
     }
 }
 
+// ===================================================
+// LENIS SMOOTH SCROLL - IMPLEMENTASI (CDN)
+// ===================================================
+
+// Inisialisasi Lenis
+const lenis = new Lenis({
+    duration: 1.2,              // Durasi animasi scroll
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing function
+    orientation: 'vertical',    // Arah scroll
+    smoothWheel: true,          // Smooth untuk wheel mouse
+    syncTouch: true,            // Sinkronisasi touch device
+    wheelMultiplier: 1.3,         // Kecepatan scroll wheel
+    touchMultiplier: 2,         // Kecepatan scroll touch
+    infinite: false,            // Infinite scrolling
+});
+
+// Jalankan Lenis dengan requestAnimationFrame
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+// ===================================================
+// FUNGSI SCROLL KE ELEMEN DARI NAVBAR
+// ===================================================
+
+// Ambil semua link navigasi yang mengarah ke ID
+document.querySelectorAll('nav ul li a, .dropdown-content a, .hero-btn a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                lenis.scrollTo(targetElement, {
+                    offset: 0,
+                    duration: 1.5,
+                });
+                
+                // Update active class di navbar
+                document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            }
+        }
+    });
+});
+
+
+
+// ===================================================
+// KODE EXISTING (PERTAHANKAN SEMUA YANG SUDAH ADA)
+// ===================================================
+
+// TECH STACK TAB
+function switchTab(tab) {
+    // Sembunyikan semua grid
+    document.querySelectorAll('.tech-grid').forEach(grid => {
+        grid.classList.remove('active');
+    });
+    
+    // Nonaktifkan semua tombol
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Aktifkan grid yang dipilih
+    if (tab === 'tools') {
+        document.getElementById('tools-content').classList.add('active');
+        document.querySelector('.tab-btn:first-child').classList.add('active');
+    } else if (tab === 'programming') {
+        document.getElementById('programming-content').classList.add('active');
+        document.querySelector('.tab-btn:last-child').classList.add('active');
+    }
+}
+
+// PROJECT SLIDER
+const sliderContainer = document.querySelector('.project-container');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+if (sliderContainer && prevBtn && nextBtn) {
+    const scrollAmount = 350;
+    
+    prevBtn.addEventListener('click', function() {
+        sliderContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    
+    nextBtn.addEventListener('click', function() {
+        sliderContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+}
+
+// DROPDOWN MENU (untuk mobile)
+const dropdown = document.querySelector('.dropdown');
+if (dropdown) {
+    dropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('show-dropdown');
+    });
+}
+
+// HIGHLIGHT ACTIVE NAV LINK SAAT SCROLL
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+});
+
+
+
+// ===================================================
+// ORGANISASI - CARD HMSI
+// ===================================================
+
+// Efek fade in foto saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    const docItems = document.querySelectorAll('.org-doc-item');
+    docItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+            item.style.transition = 'all 0.5s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, 200 + index * 100);
+    });
+});
