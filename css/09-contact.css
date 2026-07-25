@@ -1,0 +1,57 @@
+/* =========================================================================
+   10. CONTACT SECTION (PERFECTLY INVERTED ICONS)
+   ========================================================================= */
+.contact{
+    max-width:600px;
+    margin:auto;
+    text-align:left;
+}
+
+.contact.card{
+    padding:5px 25px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-item:last-child{
+    border-bottom:none;
+}
+
+.contact-item img {
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    object-fit: contain;
+    filter: invert(1) brightness(2);
+}
+
+.contact-item span, .contact-item a{
+    font-size:16px;
+    color: #cbd5e1;
+}
+
+.contact-item a{
+    text-decoration:none;
+    transition:.3s;
+}
+
+.contact-item a:hover{
+    color:#fbbf24;
+}
+
+footer{
+    background:#0a0c12;
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}

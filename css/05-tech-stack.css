@@ -1,0 +1,172 @@
+/* ===================================================
+   TECH STACK SECTION
+   =================================================== */
+
+.tech-stack-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-align: center !important;
+    display: block;
+    width: 100%;
+}
+
+.tech-stack-section .underline-decor {
+    width: 50px;
+    height: 4px;
+    background: #ff9800;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.tab-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.tab-segmented-wrapper {
+    display: flex;
+    background: #0d1117; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6px;
+    border-radius: 30px;
+    gap: 8px;
+    width: 350px;
+}
+
+.tab-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: #8b949e; 
+    padding: 12px 0;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tab-btn.active {
+    background: #ff9800;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.tab-btn i {
+    font-size: 1.1rem;
+}
+.tab-btn:not(.active) i {
+    color: #ff9800;
+}
+
+.badge {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: #fff;
+    margin-left: 4px;
+}
+
+.tab-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+}
+
+.tech-grid-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px 30px;
+    min-height: 250px;
+    box-sizing: border-box;
+}
+
+.tech-grid {
+    display: none; 
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+.tech-grid.active {
+    display: grid; 
+    animation: fadeIn 0.4s ease;
+}
+
+.tech-card {
+    background: rgba(253, 253, 253, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.tech-card i {
+    font-size: 2.4rem;
+}
+
+.tech-card span {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.tech-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-5px);
+    border-color: rgba(255, 152, 0, 0.3);
+}
+
+/* ===================================================
+   WARNA ASLI BRAND SESUAI LOGO ASLINYA
+   =================================================== */
+.brand-python i { color: #3776AB; }
+.brand-java i { color: #007396; }
+.brand-js i { color: #F7DF1E; }
+.brand-ts i { color: #3178C6; }
+.brand-html i { color: #E34F26; }
+.brand-css i { color: #1572B6; }
+.brand-flutter i { color: #02569B; }
+.brand-php i { color: #777BB4; }
+.brand-sql i { color: #00758F; }
+.brand-github i { color: #FFFFFF; }
+.brand-figma i { color: #F24E1E; }
+.brand-vscode i { color: #007ACC; }
+.brand-mysql i { color: #4479A1; }
+.brand-powerbi i { color: #F2C811; }
+.brand-qgis i { color: #589632; }
+.brand-earth-engine i { color: #4285F4; }
+.brand-colab i { color: #F9AB00; }
+.brand-postman i { color: #FF6C37; }
+.brand-selenium i { color: #43B02A; }
+.brand-pytest i { color: #0A9EDC; }
+.brand-katalon i { color: #3662E3; }
+.brand-excel i { color: #107C41; }
+.brand-word i { color: #185ABD; }
+.brand-canva i { color: #00C4CC; }
+.brand-docs i { color: #4285F4; }
+.brand-sheets i { color: #0F9D58; }
+.brand-bpmn i { color: #FF9800; }
+.brand-bizagi i { color: #107C41; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

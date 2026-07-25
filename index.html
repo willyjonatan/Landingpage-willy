@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <!-- Tambahkan ini di dalam tag <head> index.html kamu -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Urbanist:ital,wght@0,400;0,600;1,500;1,600&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Mahasiswa - Willy Jonatan Sibagariang</title>
+    
+    <!-- Boxicons untuk Ikon Modern -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Urbanist:ital,wght@0,400;0,600;1,500;1,600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Kustom Utama -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -41,16 +44,14 @@
         <h1>Willy Jonatan<br>Sibagariang</h1>
 
         <p class="hero-statement">
-        Saya adalah mahasiswa Sistem Informasi Universitas Bakrie yang 
-        berfokus pada Web Development, Quality Assurance, dan Geographic Information Systems (GIS).
-        Melalui portfolio ini, saya membagikan pengalaman, keterampilan, 
-        serta berbagai proyek yang telah saya kerjakan selama masa perkuliahan. 
-        <span class="gradient-serif">Turning Ideas Into Digital Solutions.</span>
+            Saya adalah mahasiswa Sistem Informasi Universitas Bakrie yang 
+            berfokus pada Web Development, Quality Assurance, dan Geographic Information Systems (GIS).
+            Melalui portfolio ini, saya membagikan pengalaman, keterampilan, 
+            serta berbagai proyek yang telah saya kerjakan selama masa perkuliahan. 
+            <span class="gradient-serif">Turning Ideas Into Digital Solutions.</span>
         </p>
-        
 
         <div class="stats">
-            <!-- Penambahan Kotak IPK -->
             <div class="stat-box">
                 <h2>3.66</h2>
                 <span>IPK Sem. 6</span>
@@ -87,8 +88,10 @@
             <img src="images/foto-willy.jpg" alt="Foto Willy Jonatan" class="profile-img">
         </div>
     </div>
-</section><!-- =====================================
-     BIODATA MAHASISWA
+</section>
+
+<!-- =====================================
+     BIODATA MAHASISWA (Sudah Dihapus Referensi Mobile/Smartphone)
 ===================================== -->
 <section id="about" class="about-section">
     <h2 class="section-title">Biodata</h2>
@@ -123,16 +126,17 @@
         <div class="card bio-card text-card">
             <h3 class="card-title-modern">Tentang Saya</h3>
             <p class="bio-description">
-                    Mahasiswa Sistem Informasi yang memiliki minat pada Data Analytics, Cloud Computing, 
-                    Mobile Development, Web Development, dan Digital Business. Berpengalaman mengembangkan 
-                    berbagai proyek akademik maupun pribadi yang berfokus pada pemanfaatan teknologi untuk 
-                    menyelesaikan permasalahan dan meningkatkan nilai bisnis. Memiliki kemampuan analitis, 
-                    problem solving, serta ketertarikan dalam membangun produk digital yang inovatif, 
-                    efisien, dan berorientasi pada kebutuhan pengguna.
+                Mahasiswa Sistem Informasi yang memiliki minat pada Data Analytics, Cloud Computing, 
+                Web Development, dan Digital Business. Berpengalaman mengembangkan 
+                berbagai proyek akademik maupun pribadi yang berfokus pada pemanfaatan teknologi untuk 
+                menyelesaikan permasalahan dan meningkatkan nilai bisnis. Memiliki kemampuan analitis, 
+                problem solving, serta ketertarikan dalam membangun produk digital yang inovatif, 
+                efisien, dan berorientasi pada kebutuhan pengguna.
             </p>
         </div>
     </div>
 </section>
+
 <!-- =====================================
      RIWAYAT PENDIDIKAN
 ===================================== -->
@@ -154,7 +158,6 @@
         </div>
     </div>
 </section>
-
 
 <!-- =====================================
      ORGANISASI & KEPEMIMPINAN
@@ -188,28 +191,25 @@
 </section>
 
 <!-- =====================================
-     TEKNOLOGI YANG DIGUNAKAN
+     TEKNOLOGI 
 ===================================== -->
 <section class="tech-stack-section" id="tech-stack">
     <h2>Tech Stack</h2>
-    <div class="underline-decor"></div> <!-- Pastikan div ini ada -->
+    <div class="underline-decor"></div>
     
-    <!-- Container Segmented Control -->
     <div class="tab-buttons-container">
         <div class="tab-segmented-wrapper">
-            <!-- Pastikan class 'active' ada di Tools saat pertama dimuat -->
             <button class="tab-btn active" onclick="switchTab('tools')">
-                <i class='bx bx-wrench'></i> Tools <span class="badge">20</span>
+                <i class='bx bx-wrench'></i> Tools <span class="badge">19</span>
             </button>
             <button class="tab-btn" onclick="switchTab('programming')">
-                <i class='bx bx-code-alt'></i> Languages <span class="badge">9</span>
+                <i class='bx bx-code-alt'></i> Languages <span class="badge">8</span>
             </button>
         </div>
     </div>
 
-    <!-- Area Konten Grid -->
     <div class="tech-grid-wrapper">
-        <!-- GRID 1: TOOLS (Aktif Pertama) -->
+        <!-- GRID 1: TOOLS (Aktif) -->
         <div id="tools-content" class="tech-grid active">
             <div class="tech-card brand-postman"><i class='bx bx-paper-plane'></i><span>Postman</span></div>
             <div class="tech-card brand-selenium"><i class='bx bx-check-shield'></i><span>Selenium</span></div>
@@ -219,7 +219,6 @@
             <div class="tech-card brand-figma"><i class='bx bxl-figma'></i><span>Figma</span></div>
             <div class="tech-card brand-vscode"><i class='bx bxl-visual-studio'></i><span>VS Code</span></div>
             <div class="tech-card brand-mysql"><i class='bx bxl-postgresql'></i><span>MySQL</span></div>
-            <div class="tech-card brand-flutter"><i class='bx bxl-flutter'></i><span>Flutter</span></div>
             <div class="tech-card brand-powerbi"><i class='bx bx-bar-chart-alt-2'></i><span>Power BI</span></div>
             <div class="tech-card brand-qgis"><i class='bx bx-map-alt'></i><span>QGIS</span></div>
             <div class="tech-card brand-earth-engine"><i class='bx bx-globe'></i><span>Earth Engine</span></div>
@@ -241,12 +240,12 @@
             <div class="tech-card brand-ts"><i class='bx bxl-typescript'></i><span>TypeScript</span></div>
             <div class="tech-card brand-html"><i class='bx bxl-html5'></i><span>HTML</span></div>
             <div class="tech-card brand-css"><i class='bx bxl-css3'></i><span>CSS</span></div>
-            <div class="tech-card brand-flutter"><i class='bx bxl-flutter'></i><span>Dart</span></div>
             <div class="tech-card brand-php"><i class='bx bxl-php'></i><span>PHP</span></div>
             <div class="tech-card brand-sql"><i class='bx bx-data'></i><span>SQL</span></div>
         </div>
     </div>
 </section>
+
 <!-- =====================================
      PROJECT TEAM
 ===================================== -->
@@ -321,6 +320,7 @@
     </div>
 </section>
 
+<!-- Modal View All -->
 <div id="project-modal" class="project-modal-overlay">
     <div class="project-modal-content">
         <div class="modal-header">
@@ -329,7 +329,6 @@
         </div>
         
         <div class="modal-grid-container">
-            
             <div class="project-card animate-card">
                 <div class="project-images">
                     <img src="images/Coffeego.png" alt="CoffeeGo Cover">
@@ -371,7 +370,6 @@
                     <a href="#" class="project-btn">Lihat Project</a>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -395,12 +393,11 @@
 </section>
 
 <!-- =====================================
-     SKILLS / KEMAMPUAN
+     SKILLS
 ===================================== -->
 <section id="skills">
     <h2 class="section-title">SKILLS</h2>
     <div class="card">
-        <!-- Data Analytics -->
         <div class="skill">
             <div class="skill-title">
                 <span>Data Analytics</span>
@@ -411,7 +408,6 @@
             </div>
         </div>
 
-        <!-- Database Management -->
         <div class="skill">
             <div class="skill-title">
                 <span>Database Management</span>
@@ -422,7 +418,6 @@
             </div>
         </div>
 
-        <!-- Web Development -->
         <div class="skill">
             <div class="skill-title">
                 <span>Web Development</span>
@@ -433,7 +428,6 @@
             </div>
         </div>
 
-        <!-- Business Process Modeling -->
         <div class="skill">
             <div class="skill-title">
                 <span>Business Process Modeling</span>
@@ -444,7 +438,6 @@
             </div>
         </div>
 
-        <!-- Spatial Analysis -->
         <div class="skill">
             <div class="skill-title">
                 <span>Spatial Analysis</span>
@@ -477,27 +470,27 @@
     <h2 class="section-title">Contact</h2>
     <div class="contact card">
         <div class="contact-item">
-            <img src="images/email.png" alt="Email">
+            <i class='bx bx-envelope' style='font-size: 24px;'></i>
             <a href="mailto:Willynathan86@email.com?subject=Halo Willy">Willynathan86@email.com</a>
         </div>
 
         <div class="contact-item">
-            <img src="images/phone.png" alt="Phone">
+            <i class='bx bx-phone' style='font-size: 24px;'></i>
             <span>+62 xxx xxxx xxxx</span>
         </div>
 
         <div class="contact-item">
-            <img src="images/location.png" alt="Location">
+            <i class='bx bx-map' style='font-size: 24px;'></i>
             <span>Jakarta, Indonesia</span>
         </div>
 
         <div class="contact-item">
-            <img src="images/linkedin.png" alt="LinkedIn">
+            <i class='bx bxl-linkedin-square' style='font-size: 24px;'></i>
             <a href="https://www.linkedin.com/in/willy-jonatan-s-a44193283/" target="_blank">linkedin.Willy</a>
         </div>
 
         <div class="contact-item">
-            <img src="images/github.png" alt="GitHub">
+            <i class='bx bxl-github' style='font-size: 24px;'></i>
             <a href="https://github.com/willyjonatan" target="_blank">github.Willy</a>
         </div>
     </div>
@@ -507,9 +500,9 @@
      FOOTER
 ===================================== -->
 <footer>
-        © 2026 Portfolio Mahasiswa | Willy Jonatan Sibagariang
-    </footer>
+    © 2026 Portfolio Mahasiswa | Willy Jonatan Sibagariang
+</footer>
 
-    <script src="js/script.js"></script>
+<script src="JS/script.js"></script>
 </body>
 </html>

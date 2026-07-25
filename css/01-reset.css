@@ -1,0 +1,19 @@
+/* =========================================================================
+   1. GLOBAL RESET & BODY (PREMIUM ABSTRACT METALLIC DESIGN)
+   ========================================================================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #111622; 
+    color: #cbd5e1;     
+    position: relative;
+}

@@ -1,0 +1,117 @@
+/* =========================================================================
+   12. RESPONSIVE LAYER
+   ========================================================================= */
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+    }
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .hero{
+        text-align:center;
+        flex-direction: column-reverse; 
+        gap: 30px;
+        padding-top: 40px;
+        background: linear-gradient(180deg, #1f242d 0%, #11141a 100%);
+    }
+    .hero-image {
+        justify-content: center;
+    }
+    .hero-text h1{
+        font-size:38px;
+    }
+    .project-container{
+        grid-template-columns: 1fr;
+    }
+    .hero-deco-line {
+        display: none;
+    }
+    .info-row-modern {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    .bio-value {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex: 0 0 100%;
+    }
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .prev-btn { left: -10px; }
+    .next-btn { right: -10px; }
+}
+
+@media (max-width: 768px) {
+    .project-action-wrapper {
+        justify-content: center;
+        padding-right: 0;
+    }
+}
+
+/* =====================================
+   RESPONSIVE DESIGN (UNTUK ANDROID & IPHONE)
+===================================== */
+
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 15px 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important; 
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem !important; 
+        padding: 6px 10px !important; 
+    }
+
+    nav ul li a.active {
+        padding: 6px 12px !important;
+        border-radius: 8px !important;
+    }
+
+    .stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 12px !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    .stat-box {
+        width: auto !important;
+        padding: 12px 8px !important;
+        text-align: center !important;
+    }
+
+    .stat-box h2 {
+        font-size: 1.5rem !important; 
+        margin-bottom: 2px !important;
+    }
+
+    .stat-box span {
+        font-size: 0.75rem !important; 
+    }
+}
