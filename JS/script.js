@@ -1,3 +1,5 @@
+// Di file JavaScript utama
+import Lenis from 'lenis'
 // =========================================================================
 // 1. ACTIVE NAVIGATION LINK & SMOOTH SCROLL ACCURACY
 // Otomatis mengubah menu aktif di navbar sesuai posisi scroll layar
