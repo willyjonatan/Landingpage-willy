@@ -262,22 +262,47 @@ function switchTab(tab) {
     }
 }
 
-// PROJECT SLIDER
-const sliderContainer = document.querySelector('.project-container');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
+// ===================================================
+// PROJECT SLIDER - UNTUK PROJECT INDIVIDU & TEAM
+// ===================================================
 
-if (sliderContainer && prevBtn && nextBtn) {
-    const scrollAmount = 350;
+function initSlider(containerId, prevBtnSelector, nextBtnSelector) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
     
-    prevBtn.addEventListener('click', function() {
-        sliderContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
+    const wrapper = container.closest('.project-slider-wrapper');
+    const prevBtn = wrapper?.querySelector(prevBtnSelector);
+    const nextBtn = wrapper?.querySelector(nextBtnSelector);
     
-    nextBtn.addEventListener('click', function() {
-        sliderContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
+    if (container && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', function() {
+            // Ambil lebar card pertama + gap
+            const firstCard = container.querySelector('.project-card');
+            if (firstCard) {
+                const cardWidth = firstCard.offsetWidth;
+                const gap = 24; // sesuai gap di CSS
+                const scrollAmount = cardWidth + gap;
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            const firstCard = container.querySelector('.project-card');
+            if (firstCard) {
+                const cardWidth = firstCard.offsetWidth;
+                const gap = 24; // sesuai gap di CSS
+                const scrollAmount = cardWidth + gap;
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        });
+    }
 }
+
+// Inisialisasi slider untuk Project Individu
+initSlider('individuSlider', '.prev-btn', '.next-btn');
+
+// Inisialisasi slider untuk Project Team
+initSlider('teamSlider', '.prev-btn', '.next-btn');
 
 // DROPDOWN MENU (untuk mobile)
 const dropdown = document.querySelector('.dropdown');
