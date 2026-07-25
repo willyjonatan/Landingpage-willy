@@ -137,22 +137,20 @@
 /* ===================================================
    WARNA ASLI BRAND SESUAI LOGO ASLINYA
    =================================================== */
+/* ===================================================
+   WARNA ASLI BRAND SESUAI LOGO ASLINYA
+   =================================================== */
 .brand-python i { color: #3776AB; }
 .brand-java i { color: #007396; }
 .brand-js i { color: #F7DF1E; }
-.brand-ts i { color: #3178C6; }
 .brand-html i { color: #E34F26; }
 .brand-css i { color: #1572B6; }
-.brand-flutter i { color: #02569B; }
-.brand-php i { color: #777BB4; }
 .brand-sql i { color: #00758F; }
 .brand-github i { color: #FFFFFF; }
 .brand-figma i { color: #F24E1E; }
 .brand-vscode i { color: #007ACC; }
 .brand-mysql i { color: #4479A1; }
 .brand-powerbi i { color: #F2C811; }
-.brand-qgis i { color: #589632; }
-.brand-earth-engine i { color: #4285F4; }
 .brand-colab i { color: #F9AB00; }
 .brand-postman i { color: #FF6C37; }
 .brand-selenium i { color: #43B02A; }
@@ -162,9 +160,10 @@
 .brand-word i { color: #185ABD; }
 .brand-canva i { color: #00C4CC; }
 .brand-docs i { color: #4285F4; }
-.brand-sheets i { color: #0F9D58; }
 .brand-bpmn i { color: #FF9800; }
-.brand-bizagi i { color: #107C41; }
+
+/* ===== TAMBAHKAN JMETER ===== */
+.brand-jmeter i { color: #D22128; }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }

@@ -204,7 +204,7 @@
 }
 
 /* ============================================
-   SISI KANAN - DOKUMENTASI (4 FOTO 2x2)
+   DOKUMENTASI - ULTIMATE VERSION
    ============================================ */
 
 .org-right {
@@ -213,66 +213,92 @@
 }
 
 .org-doc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 18px; /* ← Ditambah gap */
-    width: 100%;
-    height: 100%;
-    min-height: 480px; /* ← Disesuaikan dengan card */
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px !important;
+    width: 100% !important;
+    min-height: 480px !important;
 }
 
 .org-doc-item {
-    position: relative;
-    border-radius: 16px; /* ← DIPERBESAR */
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    cursor: pointer;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    background: #1a202c !important;
+    aspect-ratio: 4 / 3 !important;
+    width: 100% !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer !important;
 }
 
 .org-doc-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.4s ease !important;
 }
 
 .org-doc-item:hover {
-    transform: translateY(-6px);
-    border-color: rgba(217, 119, 6, 0.3);
-    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.15);
+    transform: translateY(-6px) !important;
+    border-color: rgba(217, 119, 6, 0.3) !important;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.15) !important;
 }
 
 .org-doc-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
-/* Overlay Caption */
 .org-doc-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-    padding: 35px 14px 14px; /* ← Ditambah padding */
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85)) !important;
+    padding: 35px 14px 14px !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
 }
 
 .org-doc-item:hover .org-doc-overlay {
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 .org-doc-overlay span {
-    color: #ffffff;
-    font-size: 14px; /* ← DIPERBESAR */
-    font-weight: 600;
-    display: block;
-    text-align: center;
-    letter-spacing: 0.3px;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+/* ===== RESPONSIF ===== */
+@media (max-width: 768px) {
+    .org-doc-grid {
+        min-height: 320px !important;
+        gap: 14px !important;
+    }
+    
+    .org-doc-overlay span {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .org-doc-grid {
+        min-height: 260px !important;
+        gap: 10px !important;
+    }
+    
+    .org-doc-overlay {
+        padding: 20px 10px 10px !important;
+    }
+    
+    .org-doc-overlay span {
+        font-size: 10px !important;
+    }
 }
 
 /* ============================================
