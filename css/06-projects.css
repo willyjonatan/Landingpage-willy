@@ -38,7 +38,7 @@
     border:1px solid rgba(255, 255, 255, 0.08);
     width:100% !important;
     height:200px !important;
-    object-fit:contain !important; /* ← UBAH: contain → cover */
+    object-fit:cover !important; /* ← UBAH: contain → cover */
     background: #222a3a;
     border-radius:15px;
     box-shadow:0 8px 25px rgba(0,0,0,.3);
