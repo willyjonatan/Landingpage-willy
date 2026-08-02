@@ -282,3 +282,21 @@
     text-shadow: 0 0 20px rgba(255, 179, 71, 0.2);
 }
 
+.hero-btn a {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+    border-bottom: 3px solid #78350f;
+    transition: .3s;
+}
+
+/* ===== TAMBAHKAN INI UNTUK IKON ===== */
+.hero-btn a i {
+    margin-right: 8px;
+}
+

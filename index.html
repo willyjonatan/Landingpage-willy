@@ -26,13 +26,7 @@
     <div class="logo">Portofolio</div>
     <ul>
         <li><a href="#home" class="active">Home</a></li>
-            <li class="dropdown">
-                <a href="#project">Project ▾</a>
-                <div class="dropdown-content">
-                    <a href="#project-individu">Individu</a>  <!-- Individu di atas -->
-                    <a href="#project-team">Team</a>          <!-- Team di bawah -->
-                </div>
-            </li>
+        <li><a href="#project-team">Projects</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -61,21 +55,19 @@
                 <span>IPK Sem. 6</span>
             </div>
             <div class="stat-box">
-                <h2>5+</h2>
-                <span>Project</span>
+                <a href="#Feature-project" style="text-decoration: none; color: inherit; display: block;">
+                    <h2>5+</h2>
+                    <span>Project</span>
+                </a>
             </div>
             <div class="stat-box">
                 <h2>10+</h2>
                 <span>Teknologi</span>
             </div>
-            <div class="stat-box">
-                <h2>3+</h2>
-                <span>Sertifikat</span>
-            </div>
         </div>
 
         <div class="hero-btn">
-            <a href="#project-team">Lihat Project</a>
+            <a href="https://drive.google.com/your-cv.pdf" target="_blank">📄 Download CV</a>
         </div>
     </div>
 
@@ -266,78 +258,12 @@
     </div>
 </section>
 
-<!-- =====================================
-     PROJECT INDIVIDU (SLIDER)
-===================================== -->
-<section id="project-individu">
-    <h2 class="section-title">Project Individu</h2>
-    
-    <div class="project-slider-wrapper">
-        <button class="slider-btn prev-btn" aria-label="Project Sebelumnya">&#10094;</button>
-        
-        <div class="project-container" id="individuSlider">
-            <!-- Card 1 -->
-            <div class="project-card">
-                <div class="project-images">
-                    <img src="images/placeholder1.jpg" alt="Project Individu 1">
-                    <img src="images/placeholder2.jpg" alt="Project Individu 1">
-                </div>
-                <div class="project-content">
-                    <h3>Aplikasi Reservasi Dokter</h3>
-                    <p>
-                        Aplikasi berbasis Java yang menerapkan konsep OOP
-                        untuk melakukan reservasi jadwal dokter.
-                    </p>
-                    <p class="project-info"><strong>Peran:</strong> Developer</p>
-                    <p class="project-info"><strong>Teknologi:</strong> Java, OOP</p>
-                    <a href="#" class="project-btn">Lihat Project</a>
-                </div>
-            </div>
-
-            <!-- Card 2 (Kosong - siap diisi) -->
-            <div class="project-card">
-                <div class="project-images">
-                    <img src="images/placeholder1.jpg" alt="Project Individu 2">
-                    <img src="images/placeholder2.jpg" alt="Project Individu 2">
-                </div>
-                <div class="project-content">
-                    <h3>Nama Project 2</h3>
-                    <p>
-                        Deskripsi project individu Anda di sini.
-                    </p>
-                    <p class="project-info"><strong>Peran:</strong> Developer</p>
-                    <p class="project-info"><strong>Teknologi:</strong> Technology Used</p>
-                    <a href="#" class="project-btn">Lihat Project</a>
-                </div>
-            </div>
-
-            <!-- Card 3 (Kosong - siap diisi) -->
-            <div class="project-card">
-                <div class="project-images">
-                    <img src="images/placeholder1.jpg" alt="Project Individu 3">
-                    <img src="images/placeholder2.jpg" alt="Project Individu 3">
-                </div>
-                <div class="project-content">
-                    <h3>Nama Project 3</h3>
-                    <p>
-                        Deskripsi project individu Anda di sini.
-                    </p>
-                    <p class="project-info"><strong>Peran:</strong> Developer</p>
-                    <p class="project-info"><strong>Teknologi:</strong> Technology Used</p>
-                    <a href="#" class="project-btn">Lihat Project</a>
-                </div>
-            </div>
-        </div>
-
-        <button class="slider-btn next-btn" aria-label="Project Berikutnya">&#10095;</button>
-    </div>
-</section>
 
 <!-- =====================================
      PROJECT TEAM
 ===================================== -->
 <section id="project-team">
-    <h2 class="section-title">Project Team</h2>
+    <h2 class="section-title">Featured Projects</h2>
     
     <div class="project-slider-wrapper">
         <button class="slider-btn prev-btn" aria-label="Project Sebelumnya">&#10094;</button>
@@ -357,7 +283,7 @@
                     dan parallel testing, sehingga proses pengujian menjadi lebih cepat, efisien, dan mudah dianalisis.           
                     </p>
                     <p class="project-info"><strong>Peran:</strong> QA Automation Engineer </p>
-                    <p class="project-info"><strong>Teknologi:</strong> VsCode, Selenium WebDriver</p>
+                    <p class="project-info"><strong>Teknologi:</strong> VsCode, Selenium WebDriver, GitHub</p>
                     <a href="https://github.com/willyjonatan/selenium_automation_test.git" target="_blank" class="project-btn">Lihat Project</a>
                 </div>
             </div>
@@ -383,18 +309,19 @@
 
             <div class="project-card">
                 <div class="project-images">
-                    <img src="images/project3-1.png" alt="Cover">
-                    <img src="images/project3-2.png" alt="Dokumentasi">
+                    <img src="images/CURA_KATALON_DASHBOARD.png" alt="Cover">
+                    <img src="images/CURA_KATALON.png" alt="Dokumentasi">
                 </div>
                 <div class="project-content">
-                    <h3>Sistem Informasi Inventory</h3>
+                    <h3>CURA Healthcare - Automation Testing</h3>
                     <p>
-                        Pengembangan purwarupa sistem manajemen stok barang berbasis digital untuk 
-                        meminimalkan selisih pencatatan data logistik pada gudang ritel berskala menengah.
+                    Pengembangan skrip automation testing berbasis Katalon Studio untuk memastikan 
+                    fungsionalitas utama aplikasi web CURA Healthcare Service berjalan sesuai harapan,
+                    mencakup skenario positif, negatif, validasi, dan data-driven testing.
                     </p>
-                    <p class="project-info"><strong>Peran:</strong> Fullstack Developer</p>
-                    <p class="project-info"><strong>Teknologi:</strong> MySQL, VS Code, PHP</p>
-                    <a href="#" class="project-btn">Lihat Project</a>
+                    <p class="project-info"><strong>Peran:</strong> Quality Assurance (QA) / Automation Tester</p>
+                    <p class="project-info"><strong>Teknologi:</strong> Katalon Studio, Groovy, GitHub, Microsoft Excel  </p>
+                    <a href="https://github.com/willyjonatan/CURA-Healthcare-Automation" class="project-btn">Lihat Project</a>
                 </div>
             </div>
         </div>

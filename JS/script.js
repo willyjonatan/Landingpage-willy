@@ -234,7 +234,24 @@ document.querySelectorAll('nav ul li a, .dropdown-content a, .hero-btn a').forEa
     });
 });
 
+// ===================================================
+// SCROLL SMOOTH KE PROJECT TEAM DARI STATS
+// ===================================================
 
+const projectStat = document.querySelector('.stat-box a[href="#project-team"]');
+if (projectStat) {
+    projectStat.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector('#project-team');
+        if (target) {
+            lenis.scrollTo(target, {
+                offset: 0,
+                duration: 1.5,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            });
+        }
+    });
+}
 
 // ===================================================
 // KODE EXISTING (PERTAHANKAN SEMUA YANG SUDAH ADA)
@@ -298,20 +315,9 @@ function initSlider(containerId, prevBtnSelector, nextBtnSelector) {
     }
 }
 
-// Inisialisasi slider untuk Project Individu
-initSlider('individuSlider', '.prev-btn', '.next-btn');
-
 // Inisialisasi slider untuk Project Team
 initSlider('teamSlider', '.prev-btn', '.next-btn');
 
-// DROPDOWN MENU (untuk mobile)
-const dropdown = document.querySelector('.dropdown');
-if (dropdown) {
-    dropdown.addEventListener('click', function(e) {
-        e.stopPropagation();
-        this.classList.toggle('show-dropdown');
-    });
-}
 
 // HIGHLIGHT ACTIVE NAV LINK SAAT SCROLL
 window.addEventListener('scroll', function() {
