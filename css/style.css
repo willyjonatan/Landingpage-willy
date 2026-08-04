@@ -44,3 +44,110 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
     pointer-events: none;
 }
+
+/* ===== OPTIMASI PERFORMANCE ===== */
+.lenis.lenis-smooth * {
+    will-change: transform !important;
+}
+
+.lenis.lenis-smooth img,
+.lenis.lenis-smooth video {
+    will-change: auto !important;
+}
+
+/* ===================================================
+   LIGHTBOX
+   =================================================== */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#lightbox.active {
+    display: flex;
+}
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 12px;
+    cursor: default;
+}
+#lightbox .close {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 10000;
+    background: rgba(255,255,255,0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+#lightbox .close:hover {
+    background: rgba(255,255,255,0.2);
+    transform: rotate(90deg);
+}
+
+/* ===================================================
+   MATIKAN EFEK BERAT DI HP
+   =================================================== */
+
+@media (max-width: 768px) {
+    /* Matikan animasi blob di hero */
+    .blob-bg {
+        display: none !important;
+    }
+    
+    /* Matikan efek hover scale di card (biar gak berat) */
+    .project-card:hover {
+        transform: none !important;
+    }
+    
+    .org-card-hmsi:hover {
+        transform: none !important;
+    }
+    
+    .org-doc-item:hover {
+        transform: none !important;
+    }
+    
+    /* Matikan efek glow */
+    .project-card::before {
+        display: none !important;
+    }
+    
+    /* Kurangi shadow */
+    .project-card {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .org-card-hmsi {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+/* ===================================================
+   NATIVE SMOOTH SCROLL
+   =================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    -webkit-overflow-scrolling: touch;
+}

@@ -48,30 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     revealOnScroll();
 });
 
-// ===================================================
-// 3. LENIS SMOOTH SCROLL
-// ===================================================
-
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    smoothWheel: true,
-    syncTouch: true,
-    wheelMultiplier: 1.3,
-    touchMultiplier: 2,
-    infinite: false,
-});
-
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
 
 // ===================================================
-// 4. NAVBAR SCROLL KE ELEMEN
+// 4. NAVBAR SCROLL KE ELEMEN (TANPA LENIS)
 // ===================================================
 
 document.querySelectorAll('nav ul li a, .dropdown-content a, .hero-btn a').forEach(link => {
@@ -83,9 +62,9 @@ document.querySelectorAll('nav ul li a, .dropdown-content a, .hero-btn a').forEa
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
-                lenis.scrollTo(targetElement, {
-                    offset: 0,
-                    duration: 1.5,
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
                 });
                 
                 document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
@@ -96,7 +75,7 @@ document.querySelectorAll('nav ul li a, .dropdown-content a, .hero-btn a').forEa
 });
 
 // ===================================================
-// 5. SCROLL KE PROJECT TEAM DARI STATS
+// 5. SCROLL KE PROJECT TEAM DARI STATS (TANPA LENIS)
 // ===================================================
 
 const projectStat = document.querySelector('.stat-box a[href="#project-team"]');
@@ -105,10 +84,9 @@ if (projectStat) {
         e.preventDefault();
         const target = document.querySelector('#project-team');
         if (target) {
-            lenis.scrollTo(target, {
-                offset: 0,
-                duration: 1.5,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
             });
         }
     });
@@ -214,3 +192,109 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200 + index * 100);
     });
 });
+
+// ===================================================
+// 10. LAZY LOADING - INTERSECTION OBSERVER (FALLBACK)
+// ===================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    if ('loading' in HTMLImageElement.prototype) {
+        console.log('✅ Native lazy loading supported');
+    } else {
+        console.log('⚠️ Native lazy loading NOT supported, using Intersection Observer fallback');
+        
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.src;
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(function(img) {
+                imageObserver.observe(img);
+            });
+        } else {
+            lazyImages.forEach(function(img) {
+                img.src = img.src;
+            });
+        }
+    }
+});
+
+// ===================================================
+// 11. PERFORMA - LAPORKAN WAKTU LOAD
+// ===================================================
+
+window.addEventListener('load', function() {
+    const loadTime = performance.now();
+    console.log(`🚀 Website loaded in ${loadTime.toFixed(2)}ms`);
+    
+    let totalImageSize = 0;
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (img.complete) {
+            const size = (img.naturalWidth * img.naturalHeight * 4) / (1024 * 1024);
+            totalImageSize += size;
+        }
+    });
+    console.log(`📸 Total estimated image size: ${totalImageSize.toFixed(2)} MB`);
+});
+
+// ===================================================
+// 12. LIGHTBOX SIMPLE - VERSION ULTIMATE (PASTI JALAN)
+// ===================================================
+
+function openLightbox(img) {
+    const overlay = document.getElementById('lightbox');
+    const bigImg = document.getElementById('lightbox-img');
+    if (!overlay || !bigImg) return;
+    
+    bigImg.src = img.src || img.getAttribute('href');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+    const overlay = document.getElementById('lightbox');
+    const bigImg = document.getElementById('lightbox-img');
+    if (!overlay) return;
+    
+    if (e) {
+        if (e.target === overlay || e.target.classList.contains('close')) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            if (bigImg) bigImg.src = '';
+        }
+    } else {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        if (bigImg) bigImg.src = '';
+    }
+}
+
+// ESC key close lightbox
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+});
+
+// ===== EVENT DELEGATION UNTUK LIGHTBOX =====
+// TAMBAHKAN .gallery a biar gallery kena lightbox
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('.gallery-link, .gallery a, .org-doc-item a, .project-images a');
+    
+    if (link) {
+        const img = link.querySelector('img');
+        if (img) {
+            e.preventDefault();
+            openLightbox(img);
+        }
+    }
+});
+
+console.log('✅ Lightbox siap! Gambar baru otomatis kebaca!');

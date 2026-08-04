@@ -13,7 +13,7 @@
 }
 
 /* ============================================
-   SISI KIRI - CARD HMSI (DIPERPANJANG)
+   SISI KIRI - CARD HMSI
    ============================================ */
 
 .org-left {
@@ -25,14 +25,15 @@
     position: relative;
     width: 100%;
     border-radius: 20px;
-    background: rgba(26, 32, 44, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    /* TANPA BLUR - Background solid */
+    background: rgba(20, 25, 38, 0.92);
+    /* backdrop-filter: blur(12px); ← HAPUS */
+    /* -webkit-backdrop-filter: blur(12px); ← HAPUS */
     border: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
     overflow: hidden;
     transition: all 0.4s ease;
-    min-height: 480px; /* ← DIPERPANJANG */
+    min-height: 480px;
 }
 
 .org-card-hmsi:hover {
@@ -42,19 +43,19 @@
 
 /* Tampilan Depan Card */
 .org-card-front-only {
-    padding: 50px 30px; /* ← Ditambah padding */
+    padding: 50px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 480px; /* ← DIPERPANJANG */
+    min-height: 480px;
     height: 100%;
     transition: all 0.4s ease;
 }
 
 .org-card-front-only .org-icon-wrapper {
-    width: 90px; /* ← DIPERBESAR */
+    width: 90px;
     height: 90px;
     border-radius: 50%;
     background: linear-gradient(135deg, rgba(217, 119, 6, 0.2), rgba(180, 83, 9, 0.1));
@@ -67,13 +68,13 @@
 }
 
 .org-card-front-only .org-icon-wrapper i {
-    font-size: 44px; /* ← DIPERBESAR */
+    font-size: 44px;
     color: #f59e0b;
 }
 
 .org-card-front-only h3 {
     color: #ffffff;
-    font-size: 28px; /* ← DIPERBESAR */
+    font-size: 28px;
     font-weight: 700;
     margin-bottom: 12px;
     line-height: 1.3;
@@ -81,7 +82,7 @@
 
 .org-card-front-only .org-role {
     color: #f59e0b;
-    font-size: 17px; /* ← DIPERBESAR */
+    font-size: 17px;
     font-weight: 600;
     background: rgba(217, 119, 6, 0.1);
     padding: 8px 22px;
@@ -91,29 +92,30 @@
 
 .org-card-front-only .org-period {
     color: #94a3b8;
-    font-size: 16px; /* ← DIPERBESAR */
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 18px;
 }
 
 .org-card-front-only .org-hover-hint {
     color: #64748b;
-    font-size: 14px; /* ← DIPERBESAR */
+    font-size: 14px;
     letter-spacing: 1px;
     animation: pulse-hint 2s ease-in-out infinite;
 }
 
-/* Detail Card (muncul saat hover) */
+/* Detail Card (muncul saat hover) - TANPA BLUR */
 .org-card-detail {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 30px 25px; /* ← Ditambah padding */
-    background: rgba(20, 25, 35, 0.98);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    padding: 30px 25px;
+    /* TANPA BLUR */
+    background: rgba(15, 20, 30, 0.98);
+    /* backdrop-filter: blur(12px); ← HAPUS */
+    /* -webkit-backdrop-filter: blur(12px); ← HAPUS */
     opacity: 0;
     visibility: hidden;
     transform: scale(0.95);
@@ -150,7 +152,7 @@
 
 .org-card-detail h4 {
     color: #ffffff;
-    font-size: 20px; /* ← DIPERBESAR */
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 18px;
     border-bottom: 2px solid rgba(217, 119, 6, 0.3);
@@ -162,7 +164,7 @@
 .org-card-detail .org-activity-list {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* ← Ditambah gap */
+    gap: 12px;
     flex: 1;
 }
 
@@ -171,7 +173,7 @@
     flex-direction: column;
     align-items: flex-start;
     background: rgba(255, 255, 255, 0.03);
-    padding: 12px 16px; /* ← Ditambah padding */
+    padding: 12px 16px;
     border-radius: 10px;
     border-left: 3px solid #d97706;
     transition: all 0.3s ease;
@@ -184,7 +186,7 @@
 
 .org-card-detail .org-activity-item .activity-date {
     color: #f59e0b;
-    font-size: 12px; /* ← DIPERBESAR */
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.5px;
     margin-bottom: 4px;
@@ -192,7 +194,7 @@
 
 .org-card-detail .org-activity-item p {
     color: #cbd5e1;
-    font-size: 14px; /* ← DIPERBESAR */
+    font-size: 14px;
     line-height: 1.5;
     margin: 0;
     text-align: left;
@@ -204,7 +206,7 @@
 }
 
 /* ============================================
-   DOKUMENTASI - ULTIMATE VERSION
+   DOKUMENTASI
    ============================================ */
 
 .org-right {
@@ -272,33 +274,6 @@
     font-weight: 600 !important;
     display: block !important;
     text-align: center !important;
-}
-
-/* ===== RESPONSIF ===== */
-@media (max-width: 768px) {
-    .org-doc-grid {
-        min-height: 320px !important;
-        gap: 14px !important;
-    }
-    
-    .org-doc-overlay span {
-        font-size: 12px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .org-doc-grid {
-        min-height: 260px !important;
-        gap: 10px !important;
-    }
-    
-    .org-doc-overlay {
-        padding: 20px 10px 10px !important;
-    }
-    
-    .org-doc-overlay span {
-        font-size: 10px !important;
-    }
 }
 
 /* ============================================
