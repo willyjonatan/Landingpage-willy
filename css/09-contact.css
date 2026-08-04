@@ -55,3 +55,387 @@ footer{
     padding:25px;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
+
+/* =========================================================================
+   CONTACT - SPLIT LAYOUT (KIRI: INFO | KANAN: FORM)
+   ========================================================================= */
+
+.contact-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* === SISI KIRI === */
+.contact-left {
+    display: flex;
+    align-items: stretch;
+}
+
+.contact-info-card {
+    width: 100%;
+    padding: 30px 25px;
+    background: rgba(26, 32, 44, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.contact-info-card h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contact-info-card .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.contact-info-card .contact-item:last-of-type {
+    border-bottom: none;
+}
+
+.contact-info-card .contact-item i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(217, 119, 6, 0.08);
+    border-radius: 50%;
+    flex-shrink: 0;
+    font-size: 22px;
+    color: #f59e0b;
+}
+
+.contact-info-card .contact-item .wa-icon {
+    color: #25D366;
+}
+
+.contact-info-card .contact-item div {
+    flex: 1;
+}
+
+.contact-label {
+    color: #94a3b8;
+    font-size: 12px;
+    display: block;
+}
+
+.contact-value {
+    color: #ffffff;
+    display: block;
+}
+
+.contact-link {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+}
+
+.contact-link:hover {
+    color: #f59e0b;
+}
+
+.wa-link {
+    color: #25D366;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+}
+
+.wa-link:hover {
+    color: #128C7E;
+}
+
+/* === COPY ICON === */
+.copy-item {
+    cursor: pointer;
+}
+
+.copy-icon {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-left: auto;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.copy-item:hover .copy-icon {
+    opacity: 1;
+    color: #f59e0b !important;
+}
+
+.copy-icon:hover {
+    transform: scale(1.2);
+}
+
+/* === STATUS BADGE === */
+.status-badge {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(217, 119, 6, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(217, 119, 6, 0.15);
+    text-align: center;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-text {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+/* === HOVER EFFECT CARD === */
+.contact-info-card:hover,
+.contact-form-wrapper:hover {
+    transform: translateY(-5px);
+    border-color: rgba(217, 119, 6, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* === SISI KANAN === */
+.contact-right {
+    display: flex;
+    align-items: stretch;
+}
+
+.contact-form-wrapper {
+    width: 100%;
+    padding: 30px 28px;
+    background: rgba(26, 32, 44, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.contact-form-wrapper h3 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* === FORM === */
+.contact-form .form-group {
+    margin-bottom: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #d97706;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(217, 119, 6, 0.08);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #94a3b8;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #d97706, #b45309);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid #78350f;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(217, 119, 6, 0.3);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* === SUCCESS NOTIFICATION === */
+#successNotification {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeInUp 0.5s ease;
+}
+
+#successNotification i {
+    font-size: 28px;
+    color: #22c55e;
+}
+
+.success-title {
+    color: #22c55e;
+    font-weight: 600;
+    margin: 5px 0 0 0;
+}
+
+.success-sub {
+    color: #94a3b8;
+    font-size: 13px;
+    margin: 5px 0 0 0;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === TOAST COPY === */
+.toast-copy {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(20, 25, 38, 0.95);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    font-size: 14px;
+    font-weight: 500;
+    animation: toastFadeIn 0.3s ease;
+}
+
+@keyframes toastFadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* =========================================================================
+   WHATSAPP FLOATING BUTTON
+   ========================================================================= */
+
+.wa-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.wa-float i {
+    font-size: 34px;
+}
+
+.wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+}
+
+/* ============================================
+   RESPONSIF
+   ============================================ */
+
+@media (max-width: 768px) {
+    .contact-split-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-info-card {
+        padding: 25px 20px;
+    }
+    
+    .contact-form-wrapper {
+        padding: 25px 20px;
+    }
+
+    .wa-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .wa-float i {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info-card .contact-item {
+        gap: 12px;
+        padding: 10px 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

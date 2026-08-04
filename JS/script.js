@@ -48,9 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     revealOnScroll();
 });
 
-
 // ===================================================
-// 4. NAVBAR SCROLL KE ELEMEN (TANPA LENIS)
+// 3. NAVBAR SCROLL KE ELEMEN (TANPA LENIS)
 // ===================================================
 
 document.querySelectorAll('nav ul li a, .dropdown-content a, .hero-btn a').forEach(link => {
@@ -75,7 +74,7 @@ document.querySelectorAll('nav ul li a, .dropdown-content a, .hero-btn a').forEa
 });
 
 // ===================================================
-// 5. SCROLL KE PROJECT TEAM DARI STATS (TANPA LENIS)
+// 4. SCROLL KE PROJECT TEAM DARI STATS (TANPA LENIS)
 // ===================================================
 
 const projectStat = document.querySelector('.stat-box a[href="#project-team"]');
@@ -93,7 +92,7 @@ if (projectStat) {
 }
 
 // ===================================================
-// 6. TECH STACK TAB
+// 5. TECH STACK TAB
 // ===================================================
 
 function switchTab(tab) {
@@ -115,7 +114,7 @@ function switchTab(tab) {
 }
 
 // ===================================================
-// 7. PROJECT SLIDER
+// 6. PROJECT SLIDER
 // ===================================================
 
 function initSlider(containerId, prevBtnSelector, nextBtnSelector) {
@@ -153,7 +152,7 @@ function initSlider(containerId, prevBtnSelector, nextBtnSelector) {
 initSlider('teamSlider', '.prev-btn', '.next-btn');
 
 // ===================================================
-// 8. HIGHLIGHT ACTIVE NAV LINK SAAT SCROLL
+// 7. HIGHLIGHT ACTIVE NAV LINK SAAT SCROLL
 // ===================================================
 
 window.addEventListener('scroll', function() {
@@ -177,7 +176,7 @@ window.addEventListener('scroll', function() {
 });
 
 // ===================================================
-// 9. ORGANISASI - FADE IN FOTO
+// 8. ORGANISASI - FADE IN FOTO
 // ===================================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -194,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===================================================
-// 10. LAZY LOADING - INTERSECTION OBSERVER (FALLBACK)
+// 9. LAZY LOADING - INTERSECTION OBSERVER (FALLBACK)
 // ===================================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -228,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===================================================
-// 11. PERFORMA - LAPORKAN WAKTU LOAD
+// 10. PERFORMA - LAPORKAN WAKTU LOAD
 // ===================================================
 
 window.addEventListener('load', function() {
@@ -247,7 +246,7 @@ window.addEventListener('load', function() {
 });
 
 // ===================================================
-// 12. LIGHTBOX SIMPLE - VERSION ULTIMATE (PASTI JALAN)
+// 11. LIGHTBOX SIMPLE - VERSION ULTIMATE (PASTI JALAN)
 // ===================================================
 
 function openLightbox(img) {
@@ -284,7 +283,6 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ===== EVENT DELEGATION UNTUK LIGHTBOX =====
-// TAMBAHKAN .gallery a biar gallery kena lightbox
 document.addEventListener('click', function(e) {
     const link = e.target.closest('.gallery-link, .gallery a, .org-doc-item a, .project-images a');
     
@@ -298,3 +296,122 @@ document.addEventListener('click', function(e) {
 });
 
 console.log('✅ Lightbox siap! Gambar baru otomatis kebaca!');
+
+// ===================================================
+// 12. TOMBOL COPY (FITUR 1)
+// ===================================================
+
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        showToast(' Berhasil disalin!');
+    }).catch(() => {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showToast(' Berhasil disalin!');
+    });
+}
+
+function showToast(message) {
+    const oldToast = document.querySelector('.toast-copy');
+    if (oldToast) oldToast.remove();
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast-copy';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 2000);
+}
+
+// ===================================================
+// 13. CONTACT FORM - AJAX (PASTI JALAN, TANPA REDIRECT)
+// ===================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successNotif = document.getElementById('successNotification');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            submitBtn.textContent = '⏳ Mengirim...';
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(form);
+            
+            fetch('https://formspree.io/f/xoeaaegn', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successNotif.style.display = 'block';
+                    successNotif.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    console.log('✅ Pesan berhasil dikirim!');
+                } else {
+                    alert('❌ Gagal mengirim pesan. Silakan coba lagi.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('❌ Gagal mengirim pesan. Periksa koneksi internet Anda.');
+            })
+            .finally(() => {
+                submitBtn.textContent = 'Kirim Pesan';
+                submitBtn.disabled = false;
+            });
+        });
+    }
+});
+
+// ===================================================
+// 14. RESET FORM (KIRIM ULANG)
+// ===================================================
+
+function resetForm() {
+    const form = document.getElementById('contactForm');
+    const successNotif = document.getElementById('successNotification');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Reset form (kosongkan input)
+    if (form) {
+        form.reset();
+        form.style.display = 'block';
+    }
+    
+    // Sembunyikan notifikasi
+    if (successNotif) {
+        successNotif.style.display = 'none';
+    }
+    
+    // Kembalikan tombol ke normal
+    if (submitBtn) {
+        submitBtn.textContent = 'Kirim Pesan';
+        submitBtn.disabled = false;
+    }
+    
+    // Scroll ke form
+    if (form) {
+        form.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+}
